@@ -36,10 +36,8 @@ interface FilterPostsProps {
 
 export function FilterPosts({
   authors,
-  tags,
   categories,
   selectedAuthor,
-  selectedTag,
   selectedCategory,
 }: FilterPostsProps) {
   const router = useRouter();
@@ -57,29 +55,13 @@ export function FilterPosts({
     router.push("/posts");
   };
 
-  const hasTags = tags.length > 0;
   const hasCategories = categories.length > 0;
   const hasAuthors = authors.length > 0;
 
-  return (
-    <div className="grid md:grid-cols-[1fr_1fr_1fr_0.5fr] gap-2 my-4 !z-10">
-      <Select
-        value={selectedTag || "all"}
-        onValueChange={(value) => handleFilterChange("tag", value)}
-      >
-        <SelectTrigger disabled={!hasTags}>
-          {hasTags ? <SelectValue placeholder="All Tags" /> : "No tags found"}
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">All Tags</SelectItem>
-          {tags.map((tag) => (
-            <SelectItem key={tag.id} value={tag.id.toString()}>
-              {tag.name}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+  console.log(categories)
 
+  return (
+    <div className="grid md:grid-cols-[1.25fr_1.25fr_0.5fr] gap-2 my-4 !z-10">
       <Select
         value={selectedCategory || "all"}
         onValueChange={(value) => handleFilterChange("category", value)}
@@ -92,7 +74,7 @@ export function FilterPosts({
           )}
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="all">All Categories</SelectItem>
+          <SelectItem value="all">Todas las categorías</SelectItem>
           {categories.map((category) => (
             <SelectItem key={category.id} value={category.id.toString()}>
               {category.name}
@@ -113,17 +95,20 @@ export function FilterPosts({
           )}
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="all">All Authors</SelectItem>
+          <SelectItem value="all">Todos los autores</SelectItem>
           {authors.map((author) => (
-            <SelectItem key={author.id} value={author.id.toString()}>
+            <>
+            {author.id === 20 && (
+              <SelectItem key={author.id} value={author.id.toString()}>
               {author.name}
             </SelectItem>
+            )}</>
           ))}
         </SelectContent>
       </Select>
 
       <Button variant="outline" onClick={handleResetFilters}>
-        Reset Filters
+        Quitar filtros
       </Button>
     </div>
   );

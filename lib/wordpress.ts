@@ -229,7 +229,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
 }
 
 export async function getAllCategories(): Promise<Category[]> {
-  return wordpressFetch<Category[]>("/wp-json/wp/v2/categories");
+  return wordpressFetch<Category[]>("/wp-json/wp/v2/categories?per_page=100");
 }
 
 export async function getCategoryById(id: number): Promise<Category> {
