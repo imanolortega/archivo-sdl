@@ -37,6 +37,6 @@ Ejecuta ESLint para verificar el código fuente.
 El archivo `.env.local` debe contener al menos las siguientes variables:
 
 ```env
-WORDPRESS_URL="https://slateblue-rabbit-150567.hostingersite.com"
-WORDPRESS_HOSTNAME="slateblue-rabbit-150567.hostingersite.com"
+WORDPRESS_URL="https://wordpress-site.com"
+WORDPRESS_HOSTNAME="wordpress-site.com"
 ```
