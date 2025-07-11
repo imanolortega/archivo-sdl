@@ -5,7 +5,7 @@ type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  site_name: "next-wp",
+  site_name: "Archivo SDL",
   site_description: "Somos Subida de Línea",
   site_domain: "https://archivosdl.com",
 };
