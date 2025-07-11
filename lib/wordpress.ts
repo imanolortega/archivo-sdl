@@ -361,6 +361,7 @@ export async function getAllPostSlugs(): Promise<{ slug: string }[]> {
         per_page: 100,
         page,
         _fields: "slug", // Only fetch slug field for performance
+        status: "publish", // Only published posts
       }
     );
 

@@ -10,6 +10,8 @@ import { badgeVariants } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/site.config";
 
+import { notFound } from "next/navigation";
+
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 
@@ -25,10 +27,16 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  let post;
+  try {
+    post = await getPostBySlug(slug);
+  } catch (error) {
+    console.error("Error al obtener el post:", error);
+    return notFound();
+  }
 
   if (!post) {
-    return {};
+    return notFound();
   }
 
   const ogUrl = new URL(`${siteConfig.site_domain}/api/og`);
@@ -70,7 +78,7 @@ export default async function Page({
 }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
-  const featuredMedia = post.featured_media
+  const featuredMedia = post?.featured_media
     ? await getFeaturedMediaById(post.featured_media)
     : null;
   // const author = await getAuthorById(post.author);
@@ -79,7 +87,7 @@ export default async function Page({
   //   day: "numeric",
   //   year: "numeric",
   // });
-  const category = await getCategoryById(post.categories[0]);
+  const category = await getCategoryById(post?.categories[0]);
 
   return (
     <Section>
