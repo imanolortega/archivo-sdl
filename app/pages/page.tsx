@@ -5,8 +5,8 @@ import BackButton from "@/components/back";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "All Pages",
-  description: "Browse all pages of our blog posts",
+  title: "Todas las páginas",
+  description: "Buscar a través de todas las páginas",
   alternates: {
     canonical: "/posts/pages",
   },
