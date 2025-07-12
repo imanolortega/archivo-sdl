@@ -31,6 +31,10 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "subida-pink": {
+          DEFAULT: "hsl(var(--subida-pink))",
+          foreground: "hsl(var(--subida-pink-foreground))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
