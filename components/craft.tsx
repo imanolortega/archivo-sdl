@@ -1,6 +1,3 @@
-// craft-ds, v0.3.2
-// This is a design system for building responsive layouts in React and handling prose
-
 import React from "react";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -101,6 +98,8 @@ const styles = {
       "[&_del]:line-through",
       "[&_small]:text-sm [&_small]:font-medium [&_small]:leading-none",
       "[&_sub]:text-sm [&_sup]:text-sm",
+      //Custom
+      "[&_.wp-caption-text]:text-[0.9rem]",
     ],
     headerSpacing: [
       "[&_h1]:mt-8 [&_h1]:mb-4",

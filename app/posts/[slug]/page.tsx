@@ -46,10 +46,10 @@ export async function generateMetadata({
   ogUrl.searchParams.append("description", description);
 
   return {
-    title: post.title.rendered,
+    title: `${post.title.rendered} | ${siteConfig.site_name}`,
     description: description,
     openGraph: {
-      title: post.title.rendered,
+      title: `${post.title.rendered} | ${siteConfig.site_name}`,
       description: description,
       type: "article",
       url: `${siteConfig.site_domain}/posts/${post.slug}`,
@@ -81,13 +81,11 @@ export default async function Page({
   const featuredMedia = post?.featured_media
     ? await getFeaturedMediaById(post.featured_media)
     : null;
-  // const author = await getAuthorById(post.author);
-  // const date = new Date(post.date).toLocaleDateString("en-US", {
-  //   month: "long",
-  //   day: "numeric",
-  //   year: "numeric",
-  // });
   const category = await getCategoryById(post?.categories[0]);
+
+  function removeInlineStyles(html: string): string {
+  return html.replace(/style="[^"]*"/g, '');
+}
 
   return (
     <Section>
@@ -123,7 +121,7 @@ export default async function Page({
           )}
         </Prose>
 
-        <Article dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+        <Article dangerouslySetInnerHTML={{ __html: removeInlineStyles(post.content.rendered) }} />
       </Container>
     </Section>
   );
