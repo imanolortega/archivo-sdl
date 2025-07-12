@@ -27,7 +27,7 @@ const ToDelete = () => {
     <main className="space-y-12">
       <Prose>
         <h1 className="mb-12">
-          <Balancer>Archivo Subida de Línea</Balancer>
+          Archivo <Balancer>Subida de Línea</Balancer>
         </h1>
 
         <p>

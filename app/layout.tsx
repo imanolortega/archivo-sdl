@@ -108,7 +108,7 @@ const Footer = () => {
     <footer>
       <Section>
         <Container className="grid md:grid-cols-[1.5fr_0.5fr] gap-12">
-          <div className="flex flex-col gap-6 not-prose">
+          <div className="hidden md:flex flex-col gap-6 not-prose">
             <Link href="/">
               <h3 className="sr-only">{siteConfig.site_name}</h3>
               <Image
@@ -122,7 +122,7 @@ const Footer = () => {
               <Balancer>{siteConfig.site_description}</Balancer>
             </p>
           </div>
-          <div className="flex flex-col gap-2 text-sm text-right">
+          <div className="flex flex-col gap-2 text-sm sm:text-right">
             <h5 className="font-medium text-base">Sitio web</h5>
             {Object.entries(mainMenu).map(([key, href]) => (
               <Link

@@ -4,6 +4,12 @@ export const mainMenu = {
   articulos: "/posts",
 };
 
+export const mainMenuMobile = {
+  inicio: "/",
+  articulos: "/posts",
+  apoyar: "/pages/apoyar",
+};
+
 export const contentMenu = {
   categories: "/posts/categories",
   tags: "/posts/tags",
