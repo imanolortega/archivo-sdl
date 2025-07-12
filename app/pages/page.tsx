@@ -19,7 +19,7 @@ export default async function Page() {
     <Section>
       <Container className="space-y-6">
         <Prose className="mb-8">
-          <h2>All Pages</h2>
+          <h1>Todas las páginas</h1>
           <ul className="grid">
             {pages.map((page: any) => (
               <li key={page.id}>

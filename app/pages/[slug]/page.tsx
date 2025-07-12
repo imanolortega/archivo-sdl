@@ -76,7 +76,7 @@ export default async function Page({
     <Section>
       <Container>
         <Prose>
-          <h2>{page.title.rendered}</h2>
+          <h1>{page.title.rendered}</h1>
           <div dangerouslySetInnerHTML={{ __html: page.content.rendered }} />
         </Prose>
       </Container>

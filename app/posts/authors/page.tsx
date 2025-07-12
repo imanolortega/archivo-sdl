@@ -20,7 +20,7 @@ export default async function Page() {
     <Section>
       <Container className="space-y-6">
         <Prose className="mb-8">
-          <h2>{authorsPage.title}</h2>
+          <h1>{authorsPage.title}</h1>
           <p>
             {authorsPage.description}
           </p>

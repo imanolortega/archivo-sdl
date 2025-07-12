@@ -26,7 +26,7 @@ export default async function Page() {
       <Container>
         <div className="space-y-8">
           <Prose>
-            <h2>{topPost.title}</h2>
+            <h1>{topPost.title}</h1>
           </Prose>
 
           <div className="grid md:grid-cols-3 gap-4">
