@@ -3,7 +3,7 @@ import Balancer from "react-wrap-balancer";
 
 import Link from "next/link";
 
-import { gridMainContent, main } from "@/lib/content";
+import { gridMainContent, homePage } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -17,14 +17,14 @@ export default function Home() {
 
 const Main = () => {
   return (
-    <main className="space-y-12">
+    <main className="space-y-16">
       <Prose>
         <h1 className="mb-12">
           Archivo <Balancer>Subida de Línea</Balancer>
         </h1>
 
         <p>
-          {main.description}
+          {homePage.description}
         </p>
       </Prose>
 
@@ -34,7 +34,7 @@ const Main = () => {
             <Link
               key={item.title}
               href={item.href}
-              className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
+              className="border h-48 bg-accent/25 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
             >
               <item.icon size={32} />
               <span>

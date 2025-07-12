@@ -8,7 +8,7 @@ import { MobileNav } from "@/components/nav/mobile-nav";
 import { Analytics } from "@vercel/analytics/react";
 import { Button } from "@/components/ui/button";
 
-import { mainMenu, contentMenu } from "@/menu.config";
+import { mainMenu, bottomMenu } from "@/menu.config";
 import { siteConfig } from "@/site.config";
 import { cn } from "@/lib/utils";
 
@@ -124,7 +124,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-2 text-sm sm:text-right">
             <h5 className="font-medium text-base">Sitio web</h5>
-            {Object.entries(mainMenu).map(([key, href]) => (
+            {Object.entries(bottomMenu).map(([key, href]) => (
               <Link
                 className="hover:underline underline-offset-4"
                 key={href}

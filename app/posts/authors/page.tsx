@@ -3,12 +3,13 @@ import { Section, Container, Prose } from "@/components/craft";
 import { Metadata } from "next";
 import BackButton from "@/components/back";
 import Link from "next/link";
+import { authorsPage } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "All Authors",
-  description: "Browse all authors of our blog posts",
+  title: authorsPage.title,
+  description: authorsPage.description,
   alternates: {
-    canonical: "/posts/authors",
+    canonical: authorsPage.canonical,
   },
 };
 
@@ -19,7 +20,10 @@ export default async function Page() {
     <Section>
       <Container className="space-y-6">
         <Prose className="mb-8">
-          <h2>All Authors</h2>
+          <h2>{authorsPage.title}</h2>
+          <p>
+            {authorsPage.description}
+          </p>
           <ul className="grid">
             {authors.map((author: any) => (
               <>

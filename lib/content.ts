@@ -1,18 +1,24 @@
 import { File, Pen, User } from "lucide-react"
 
-export const main = {
+const homePage = {
   title: "Archivo Subida de Línea",
   description: "Subida de Línea es una revista digital de crónicas, ensayos, entrevistas, poesía, cuentos y relatos de ficción. Desde el año 2016 proponemos una forma de hacer periodismo centrada en las personas, sus historias y sus derechos.",
   canonical: "/",
 }
 
-export const topPost = {
+const authorsPage = {
+  title: "Todos los autores",
+  description: "Explora todos los autores de nuestros artículos",
+  canonical: "/posts/authors",
+}
+
+const topPost = {
   title: "Musa: el nombre del miedo",
   description: "Crónicas en serie sobre Musa Azar",
   canonical: "/pages/musa-el-nombre-del-miedo",
 }
 
-export const gridMainContent = [
+const gridMainContent = [
   {
     title: topPost.title,
     description: topPost.description,
@@ -32,3 +38,5 @@ export const gridMainContent = [
     icon: User,
   },
 ]
+
+export { homePage, authorsPage, topPost, gridMainContent }

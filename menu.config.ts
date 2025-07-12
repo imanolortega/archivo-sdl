@@ -4,9 +4,17 @@ export const mainMenu = {
   articulos: "/posts",
 };
 
+export const bottomMenu = {
+  inicio: "/",
+  articulos: "/posts",
+  'musa': "/pages/musa-el-nombre-del-miedo",
+  apoyar: "/pages/apoyar",
+};
+
 export const mainMenuMobile = {
   inicio: "/",
   articulos: "/posts",
+  'musa': "/pages/musa-el-nombre-del-miedo",
   apoyar: "/pages/apoyar",
 };
 
