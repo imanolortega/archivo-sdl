@@ -138,7 +138,7 @@ const Footer = () => {
         <Container className="border-t not-prose flex flex-col md:flex-row md:gap-2 gap-6 justify-between md:items-center">
           <ThemeToggle />
           <p className="text-muted-foreground">
-            &copy; <a href="https://9d8.dev">Subida de Línea</a>.
+            &copy; <a href="https:imanolortega.dev">Subida de Línea</a>.
             2016-2025
           </p>
         </Container>

@@ -23,10 +23,14 @@ import { FilterPosts } from "@/components/posts/filter";
 import { SearchInput } from "@/components/posts/search-input";
 
 import type { Metadata } from "next";
+import { homePage, postsPage } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Blog Posts",
-  description: "Browse all our blog posts",
+  title: `${postsPage.title} | ${homePage.title}`,
+  description: postsPage.description,
+  alternates: {
+    canonical: postsPage.canonical,
+  },
 };
 
 export const dynamic = "auto";
@@ -80,7 +84,7 @@ export default async function Page({
             <h2>Todos los artículos</h2>
             <p className="text-muted-foreground">
               {total} {total === 1 ? "artículo encontrado" : "artículos encontrados"}
-              {search && " matching your search"}
+              {search && " que coinciden con tu búsqueda"}
             </p>
           </Prose>
 

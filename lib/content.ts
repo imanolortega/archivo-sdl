@@ -12,6 +12,12 @@ const authorsPage = {
   canonical: "/posts/authors",
 }
 
+const postsPage = {
+  title: "Todos los textos",
+  description: "Explora todos los texts de Subida de Línea",
+  canonical: "/posts",
+}
+
 const topPost = {
   title: "Musa: el nombre del miedo",
   description: "Crónicas en serie sobre Musa Azar",
@@ -39,4 +45,4 @@ const gridMainContent = [
   },
 ]
 
-export { homePage, authorsPage, topPost, gridMainContent }
+export { homePage, authorsPage, postsPage, topPost, gridMainContent }
