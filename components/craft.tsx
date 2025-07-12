@@ -85,9 +85,9 @@ const styles = {
     base: [
       "font-sans antialiased",
       // Headings (without spacing)
-      "[&_h1]:text-4xl [&_h1]:font-medium [&_h1]:tracking-tight",
-      "[&_h2]:text-3xl [&_h2]:font-medium [&_h2]:tracking-tight",
-      "[&_h3]:text-2xl [&_h3]:font-medium [&_h3]:tracking-tight",
+      "[&_h1]:text-4xl [&_h1]:font-semibold [&_h1]:tracking-tight",
+      "[&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:tracking-tight",
+      "[&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:tracking-tight",
       "[&_h4]:text-xl [&_h4]:font-medium [&_h4]:tracking-tight",
       "[&_h5]:text-lg [&_h5]:font-medium [&_h5]:tracking-tight",
       "[&_h6]:text-base [&_h6]:font-medium [&_h6]:tracking-tight",
