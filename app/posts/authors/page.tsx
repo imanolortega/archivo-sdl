@@ -22,9 +22,15 @@ export default async function Page() {
           <h2>All Authors</h2>
           <ul className="grid">
             {authors.map((author: any) => (
-              <li key={author.id}>
-                <Link href={`/posts/?author=${author.id}`}>{author.name}</Link>
-              </li>
+              <>
+                {author.id === 20 && (
+                  <li key={author.id}>
+                    <Link href={`/posts/?author=${author.id}`}>
+                      {author.name}
+                    </Link>
+                  </li>
+                )}
+              </>
             ))}
           </ul>
         </Prose>
