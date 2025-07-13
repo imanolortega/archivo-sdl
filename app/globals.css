@@ -34,8 +34,11 @@
 
     --radius: 0.5rem;
 
-    --subida-pink: 345 70% 52%;
-    --subida-pink-foreground: 345 80% 52%;
+    --subida-pink: 349 100% 43%;
+    --subida-pink-foreground: 349 88% 58%;
+
+    --subida-violet: 253 51% 70%;
+    --subida-violet-foreground: 253 50% 23%;
   }
 
   .dark {
@@ -67,8 +70,11 @@
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
 
-    --subida-pink: 345 70% 52%;
-    --subida-pink-foreground: 345 80% 52%;
+    --subida-pink: 349 100% 43%;
+    --subida-pink-foreground: 349 88% 58%;
+
+    --subida-violet: 253 51% 70%;
+    --subida-violet-foreground: 253 50% 23%;
   }
 }
 

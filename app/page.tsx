@@ -75,7 +75,7 @@ export default async function Home() {
             <div className="flex items-center justify-center py-6">
               <Button
                 asChild
-                className="bg-subida-pink hover:bg-subida-pink-foreground hidden sm:flex text-white font-semibold"
+                className="bg-subida-pink-foreground hover:bg-subida-pink hidden sm:flex text-white font-semibold"
               >
                 <Link href="/posts">Ver más textos</Link>
               </Button>
