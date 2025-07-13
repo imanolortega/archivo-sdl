@@ -5,7 +5,6 @@ import Link from "next/link";
 
 import { gridMainContent, homePage } from "@/lib/content.config";
 import { SearchInput } from "@/components/posts/search-input";
-import { FilterPosts } from "@/components/posts/filter";
 import { getPostsPaginated } from "@/lib/wordpress";
 import { PostCard } from "@/components/posts/post-card";
 import { Pagination
@@ -79,7 +78,7 @@ export default async function Home({
         </Container>
       </Section>
 
-      <Section>
+      <Section id='last-articles'>
         <Container>
           <Prose>
             <h2 className="mb-12">
