@@ -10,22 +10,22 @@ import {
 } from "@/components/ui/select"; // Ensure this is the correct import path
 import { Button } from "@/components/ui/button"; // Add this import for the Button component
 
-interface Author {
+export interface Author {
   id: number;
   name: string;
 }
 
-interface Tag {
+export interface Tag {
   id: number;
   name: string;
 }
 
-interface Category {
+export interface Category {
   id: number;
   name: string;
 }
 
-interface FilterPostsProps {
+export interface FilterPostsProps {
   authors: Author[];
   tags: Tag[];
   categories: Category[];
@@ -43,7 +43,6 @@ export function FilterPosts({
   const router = useRouter();
 
   const handleFilterChange = (type: string, value: string) => {
-    console.log(`Filter changed: ${type} -> ${value}`);
     const newParams = new URLSearchParams(window.location.search);
     newParams.delete("page");
     value === "all" ? newParams.delete(type) : newParams.set(type, value);
@@ -57,8 +56,6 @@ export function FilterPosts({
 
   const hasCategories = categories.length > 0;
   const hasAuthors = authors.length > 0;
-
-  console.log(categories)
 
   return (
     <div className="grid md:grid-cols-[1.25fr_1.25fr_0.5fr] gap-2 my-4 !z-10">

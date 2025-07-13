@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 
 import {
   getFeaturedMediaById,
-  getAuthorById,
   getCategoryById,
 } from "@/lib/wordpress";
 
