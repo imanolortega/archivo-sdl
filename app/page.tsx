@@ -25,7 +25,7 @@ export default async function Home({
 
   // Handle pagination
   const page = pageParam ? parseInt(pageParam, 10) : 1;
-  const postsPerPage = 9;
+  const postsPerPage = 6;
 
   const [postsResponse] = await Promise.all([
     getPostsPaginated(page, postsPerPage, { search }),
