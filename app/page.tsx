@@ -72,7 +72,7 @@ export default async function Home() {
                 <p>No se encontraron textos</p>
               </div>
             )}
-            <div className="flex items-center justify-center py-4">
+            <div className="flex items-center justify-center py-6">
               <Button
                 asChild
                 className="bg-subida-pink hover:bg-subida-pink-foreground hidden sm:flex text-white font-semibold"

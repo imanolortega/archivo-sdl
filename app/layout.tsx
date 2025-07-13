@@ -107,10 +107,9 @@ const Footer = () => {
   return (
     <footer>
       <Section>
-        <Container className="grid md:grid-cols-[1.5fr_0.5fr] gap-12">
-          <div className="hidden md:flex flex-col gap-6 not-prose">
+        <Container className="border-t grid md:grid-cols-[1.5fr_0.5fr] gap-12">
+          <div className="hidden md:flex items-center not-prose">
             <Link href="/">
-              <h3 className="sr-only">{siteConfig.site_name}</h3>
               <Image
                 src={Logo}
                 alt="Logo Subida de Línea"
@@ -118,9 +117,6 @@ const Footer = () => {
                 height={26.44}
               ></Image>
             </Link>
-            <p>
-              <Balancer>{siteConfig.site_description}</Balancer>
-            </p>
           </div>
           <div className="flex flex-col gap-2 text-sm sm:text-right">
             <h5 className="font-medium text-base">Sitio web</h5>
