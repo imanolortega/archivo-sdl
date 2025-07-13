@@ -13,7 +13,7 @@ import { siteConfig } from "@/lib/site.config";
 import { cn } from "@/lib/utils";
 
 import Balancer from "react-wrap-balancer";
-import Logo from "@/public/subida-de-linea-logo.svg";
+import Logo from "@/public/logo-subida-de-linea.webp";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -113,7 +113,7 @@ const Footer = () => {
               <h3 className="sr-only">{siteConfig.site_name}</h3>
               <Image
                 src={Logo}
-                alt="Logo"
+                alt="Logo Subida de Línea"
                 width={42}
                 height={26.44}
               ></Image>
