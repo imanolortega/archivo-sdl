@@ -57,7 +57,7 @@ export default async function Home({
               href={item.href}
               className="border h-48 bg-accent/25 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
             >
-              <item.icon size={32} />
+              <item.icon size={32} className="text-muted-foreground" />
               <span>
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <p className="block text-sm text-muted-foreground mt-4">
