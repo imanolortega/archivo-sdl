@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Post } from "@/lib/wordpress.d";
 import { cn } from "@/lib/utils";
 
+import Placeholder from "@/public/subida-placeholder.jpg";
+
 import {
   getFeaturedMediaById,
   getCategoryById,
@@ -39,7 +41,8 @@ export async function PostCard({ post }: { post: Post }) {
               alt={post.title?.rendered || "Post thumbnail"}
               width={400}
               height={200}
-              unoptimized
+              placeholder="blur"
+              blurDataURL={Placeholder.src}
             />
           ) : (
             <div className="flex items-center justify-center w-full h-full text-muted-foreground">
