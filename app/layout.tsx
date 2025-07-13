@@ -12,7 +12,6 @@ import { mainMenu, bottomMenu } from "@/lib/menu.config";
 import { siteConfig } from "@/lib/site.config";
 import { cn } from "@/lib/utils";
 
-import Balancer from "react-wrap-balancer";
 import Logo from "@/public/logo-subida-de-linea.webp";
 import Image from "next/image";
 import Link from "next/link";

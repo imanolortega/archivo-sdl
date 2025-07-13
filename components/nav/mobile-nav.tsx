@@ -6,8 +6,9 @@ import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 
 // Utility Imports
-import { Menu, ArrowRightSquare } from "lucide-react";
+import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Logo from "@/public/logo-subida-de-linea.webp";
 
 // Component Imports
 import { Button } from "@/components/ui/button";
@@ -23,6 +24,7 @@ import { Separator } from "@/components/ui/separator";
 
 import { mainMenuMobile } from "@/lib/menu.config";
 import { siteConfig } from "@/lib/site.config";
+import Image from "next/image";
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
@@ -43,10 +45,15 @@ export function MobileNav() {
           <SheetTitle className="text-left">
             <MobileLink
               href="/"
-              className="flex items-center"
+              className="flex items-center gap-4"
               onOpenChange={setOpen}
             >
-              <ArrowRightSquare className="mr-2 h-4 w-4" />
+              <Image
+                src={Logo}
+                alt="Logo Subida de Línea"
+                width={42}
+                height={26.44}
+              ></Image>
               <span>{siteConfig.site_name}</span>
             </MobileLink>
           </SheetTitle>
