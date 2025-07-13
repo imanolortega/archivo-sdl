@@ -100,7 +100,6 @@ const styles = {
       "[&_sub]:text-sm [&_sup]:text-sm",
       //Custom
       "[&_.wp-caption-text]:text-[0.9rem]",
-      "[&_.logo]:text-[0.9rem]",
     ],
     headerSpacing: [
       "[&_h1]:mt-8 [&_h1]:mb-4",
