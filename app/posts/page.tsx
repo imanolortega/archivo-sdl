@@ -83,7 +83,7 @@ export default async function Page({
           <Prose>
             <h1>{postsPage.title}</h1>
             <p className="text-muted-foreground">
-              {total} {total === 1 ? "artículo encontrado" : "artículos encontrados"}
+              {total} {total === 1 ? "texto encontrado" : "textos encontrados"}
               {search && " que coinciden con tu búsqueda"}
             </p>
           </Prose>
@@ -109,7 +109,7 @@ export default async function Page({
             </div>
           ) : (
             <div className="h-24 w-full border rounded-lg bg-accent/25 flex items-center justify-center">
-              <p>No se encontraron artículos</p>
+              <p>No se encontraron textos</p>
             </div>
           )}
 

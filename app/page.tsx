@@ -87,7 +87,7 @@ export default async function Home({
               </div>
             ) : (
               <div className="h-24 w-full border rounded-lg bg-accent/25 flex items-center justify-center">
-                <p>No se encontraron artículos</p>
+                <p>No se encontraron textos</p>
               </div>
             )}
           </section>

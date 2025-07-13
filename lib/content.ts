@@ -8,7 +8,7 @@ const homePage = {
 
 const authorsPage = {
   title: "Todos los autores",
-  description: "Explora todos los autores de nuestros artículos",
+  description: "Explora todos los autores de nuestros textos",
   canonical: "/posts/authors",
 }
 

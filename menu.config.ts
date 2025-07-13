@@ -1,19 +1,19 @@
 // Define the menu items
 export const mainMenu = {
   inicio: "/",
-  articulos: "/posts",
+  textos: "/posts",
 };
 
 export const bottomMenu = {
   inicio: "/",
-  articulos: "/posts",
+  textos: "/posts",
   'musa': "/pages/musa-el-nombre-del-miedo",
   apoyar: "/pages/apoyar",
 };
 
 export const mainMenuMobile = {
   inicio: "/",
-  articulos: "/posts",
+  textos: "/posts",
   'musa': "/pages/musa-el-nombre-del-miedo",
   apoyar: "/pages/apoyar",
 };
