@@ -3,7 +3,7 @@ import Balancer from "react-wrap-balancer";
 
 import Link from "next/link";
 
-import { gridMainContent, homePage } from "@/lib/content";
+import { gridMainContent, homePage } from "@/lib/content.config";
 import { SearchInput } from "@/components/posts/search-input";
 import { FilterPosts } from "@/components/posts/filter";
 import { getPostsPaginated } from "@/lib/wordpress";

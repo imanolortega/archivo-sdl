@@ -3,10 +3,11 @@ import { Section, Container, Prose } from "@/components/craft";
 import { Metadata } from "next";
 import BackButton from "@/components/back";
 import Link from "next/link";
-import { authorsPage,homePage } from "@/lib/content";
+import { authorsPage,homePage } from "@/lib/content.config";
+import { siteConfig } from "@/lib/site.config";
 
 export const metadata: Metadata = {
-  title: `${authorsPage.title} | ${homePage.title}`,
+  title: `${authorsPage.title} | ${siteConfig.site_name}`,
   description: authorsPage.description,
   alternates: {
     canonical: authorsPage.canonical,

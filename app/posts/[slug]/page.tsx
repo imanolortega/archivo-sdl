@@ -8,7 +8,7 @@ import {
 import { Section, Container, Article, Prose } from "@/components/craft";
 import { badgeVariants } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { siteConfig } from "@/site.config";
+import { siteConfig } from "@/lib/site.config";
 
 import { notFound } from "next/navigation";
 

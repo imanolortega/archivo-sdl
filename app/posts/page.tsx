@@ -23,10 +23,11 @@ import { FilterPosts } from "@/components/posts/filter";
 import { SearchInput } from "@/components/posts/search-input";
 
 import type { Metadata } from "next";
-import { homePage, postsPage } from "@/lib/content";
+import { homePage, postsPage } from "@/lib/content.config";
+import { siteConfig } from "@/lib/site.config";
 
 export const metadata: Metadata = {
-  title: `${postsPage.title} | ${homePage.title}`,
+  title: `${postsPage.title} | ${siteConfig.site_name}`,
   description: postsPage.description,
   alternates: {
     canonical: postsPage.canonical,

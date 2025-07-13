@@ -1,6 +1,6 @@
 import { getPageBySlug, getAllPages } from "@/lib/wordpress";
 import { Section, Container, Prose } from "@/components/craft";
-import { siteConfig } from "@/site.config";
+import { siteConfig } from "@/lib/site.config";
 
 import type { Metadata } from "next";
 

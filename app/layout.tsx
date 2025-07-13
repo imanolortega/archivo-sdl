@@ -8,8 +8,8 @@ import { MobileNav } from "@/components/nav/mobile-nav";
 import { Analytics } from "@vercel/analytics/react";
 import { Button } from "@/components/ui/button";
 
-import { mainMenu, bottomMenu } from "@/menu.config";
-import { siteConfig } from "@/site.config";
+import { mainMenu, bottomMenu } from "@/lib/menu.config";
+import { siteConfig } from "@/lib/site.config";
 import { cn } from "@/lib/utils";
 
 import Balancer from "react-wrap-balancer";
@@ -25,7 +25,7 @@ const font = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Archivo SDL | Subida de Línea",
+  title: `${siteConfig.site_name} | Subida de Línea`,
   description:
     "Somos Subida de Línea, una revista digital de crónicas, ensayos, entrevistas, poesía, cuentos y relatos de ficción.",
   metadataBase: new URL(siteConfig.site_domain),
@@ -75,12 +75,12 @@ const Nav = ({ className, children, id }: NavProps) => {
         >
           <Image
             src={Logo}
-            alt="Logo"
+            alt="Logo Subida de Línea"
             loading="eager"
             width={40}
             height={26.44}
           ></Image>
-          <h2 className="text-sm">{siteConfig.site_name}</h2>
+          <h2 className="logo">{siteConfig.site_name}</h2>
         </Link>
         {children}
         <div className="flex items-center gap-2">
@@ -138,7 +138,7 @@ const Footer = () => {
         <Container className="border-t not-prose flex flex-col md:flex-row md:gap-2 gap-6 justify-between md:items-center">
           <ThemeToggle />
           <p className="text-muted-foreground">
-            &copy; <a href="https:imanolortega.dev">Subida de Línea</a>.
+            &copy; <a href="https:imanolortega.dev">{siteConfig.site_name}</a>.
             2016-2025
           </p>
         </Container>

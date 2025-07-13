@@ -4,7 +4,7 @@ import { Section, Container, Prose } from "@/components/craft";
 import { PostCard } from "@/components/posts/post-card";
 
 import type { Metadata } from "next";
-import { topPost } from "@/lib/content";
+import { topPost } from "@/lib/content.config";
 
 export const metadata: Metadata = {
   title: topPost.title,
