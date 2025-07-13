@@ -4,44 +4,20 @@ import Balancer from "react-wrap-balancer";
 import Link from "next/link";
 
 import { gridMainContent, homePage } from "@/lib/content.config";
-import { SearchInput } from "@/components/posts/search-input";
 import { getPostsPaginated } from "@/lib/wordpress";
 import { PostCard } from "@/components/posts/post-card";
-import { Pagination
-, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 
 export const dynamic = "auto";
 export const revalidate = 600;
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: Promise<{
-    page?: string;
-    search?: string;
-  }>;
-}) {
-  const params = await searchParams;
-  const { page: pageParam, search } = params;
-
-  // Handle pagination
-  const page = pageParam ? parseInt(pageParam, 10) : 1;
+export default async function Home() {
   const postsPerPage = 6;
 
   const [postsResponse] = await Promise.all([
-    getPostsPaginated(page, postsPerPage, { search }),
+    getPostsPaginated(1, postsPerPage),
   ]);
 
-  const { data: posts, headers } = postsResponse;
-  const { total, totalPages } = headers;
-
-  // Create pagination URL helper
-  const createPaginationUrl = (newPage: number) => {
-    const params = new URLSearchParams();
-    if (newPage > 1) params.set("page", newPage.toString());
-    if (search) params.set("search", search);
-    return `/${params.toString() ? `?${params.toString()}` : ""}`;
-  };
+  const { data: posts } = postsResponse;
 
   return (
     <main>
@@ -86,8 +62,6 @@ export default async function Home({
             </h2>
           </Prose>
           <section className="space-y-6">
-            <SearchInput defaultValue={search} />
-
             {posts.length > 0 ? (
               <div className="grid md:grid-cols-3 gap-4">
                 {posts.map((post) => (
@@ -99,55 +73,6 @@ export default async function Home({
                 <p>No se encontraron textos</p>
               </div>
             )}
-
-            {totalPages > 1 && (
-            <div className="flex justify-center items-center py-8">
-              <Pagination>
-                <PaginationContent>
-                  {page > 1 && (
-                    <PaginationItem>
-                      <PaginationPrevious
-                        href={createPaginationUrl(page - 1)}
-                      />
-                    </PaginationItem>
-                  )}
-
-                  {Array.from({ length: totalPages }, (_, i) => i + 1)
-                    .filter((pageNum) => {
-                      // Show current page, first page, last page, and 2 pages around current
-                      return (
-                        pageNum === 1 ||
-                        pageNum === totalPages ||
-                        Math.abs(pageNum - page) <= 1
-                      );
-                    })
-                    .map((pageNum, index, array) => {
-                      const showEllipsis =
-                        index > 0 && pageNum - array[index - 1] > 1;
-                      return (
-                        <div key={pageNum} className="flex items-center">
-                          {showEllipsis && <span className="px-2">...</span>}
-                          <PaginationItem>
-                            <PaginationLink
-                              href={createPaginationUrl(pageNum)}
-                              isActive={pageNum === page}
-                            >
-                              {pageNum}
-                            </PaginationLink>
-                          </PaginationItem>
-                        </div>
-                      );
-                    })}
-
-                  {page < totalPages && (
-                    <PaginationItem>
-                      <PaginationNext href={createPaginationUrl(page + 1)} />
-                    </PaginationItem>
-                  )}
-                </PaginationContent>
-              </Pagination>
-            </div>
-          )}
           </section>
         </Container>
       </Section>
