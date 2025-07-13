@@ -6,6 +6,7 @@ import Link from "next/link";
 import { gridMainContent, homePage } from "@/lib/content.config";
 import { getPostsPaginated } from "@/lib/wordpress";
 import { PostCard } from "@/components/posts/post-card";
+import { Button } from "@/components/ui/button";
 
 export const dynamic = "auto";
 export const revalidate = 600;
@@ -54,12 +55,10 @@ export default async function Home() {
         </Container>
       </Section>
 
-      <Section id='last-articles'>
+      <Section id="last-articles">
         <Container>
           <Prose>
-            <h2 className="mb-12">
-              Últimas notas
-            </h2>
+            <h2 className="mb-12">Textos</h2>
           </Prose>
           <section className="space-y-6">
             {posts.length > 0 ? (
@@ -73,6 +72,14 @@ export default async function Home() {
                 <p>No se encontraron textos</p>
               </div>
             )}
+            <div className="flex items-center justify-center py-4">
+              <Button
+                asChild
+                className="bg-subida-pink hover:bg-subida-pink-foreground hidden sm:flex text-white font-semibold"
+              >
+                <Link href="/posts">Ver más textos</Link>
+              </Button>
+            </div>
           </section>
         </Container>
       </Section>
