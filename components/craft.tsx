@@ -100,6 +100,8 @@ const styles = {
       "[&_sub]:text-sm [&_sup]:text-sm",
       //Custom
       "[&_.wp-caption-text]:text-[0.9rem]",
+      "[&_.wp-block-quote]:my-8 [&_.wp-block-quote]:border-subida-pink-foreground",
+
     ],
     headerSpacing: [
       "[&_h1]:mt-8 [&_h1]:mb-4",

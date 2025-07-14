@@ -1,20 +1,21 @@
 import {
-  getPostBySlug,
-  getFeaturedMediaById,
-  getCategoryById,
   getAllPostSlugs,
+  getCategoryById,
+  getFeaturedMediaById,
+  getPostBySlug,
 } from "@/lib/wordpress";
 
-import { Section, Container, Article, Prose } from "@/components/craft";
 import { badgeVariants } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
-import { siteConfig } from "@/lib/site.config";
-
-import { notFound } from "next/navigation";
-
-import Link from "next/link";
+import { Section, Container, Article, Prose } from "@/components/craft";
 import Balancer from "react-wrap-balancer";
 
+import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/site.config";
+import Placeholder from "@/public/subida-article-placeholder.webp";
+
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -111,11 +112,14 @@ export default async function Page({
           </div>
           {featuredMedia?.source_url && (
             <div className="h-96 my-12 md:h-[500px] overflow-hidden flex items-center justify-center border rounded-lg bg-accent/25">
-              {/* eslint-disable-next-line */}
-              <img
-                className="w-full h-full object-cover"
+              <Image
+                className="h-full w-full object-cover"
                 src={featuredMedia.source_url}
                 alt={post.title.rendered}
+                width={1200}
+                height={900}
+                placeholder="blur"
+                blurDataURL={Placeholder.src}
               />
             </div>
           )}
