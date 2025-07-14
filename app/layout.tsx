@@ -29,28 +29,28 @@ export const metadata: Metadata = {
     "Somos Subida de Línea, una revista digital de crónicas, ensayos, entrevistas, poesía, cuentos y relatos de ficción.",
   metadataBase: new URL(siteConfig.site_domain),
   alternates: {
-    canonical: "/",
+    canonical: siteConfig.site_domain,
   },
   openGraph: {
-      title: siteConfig.site_name,
-      description: siteConfig.site_description,
-      type: "website",
-      url: siteConfig.site_domain,
-      images: [
-        {
-          url: `${siteConfig.site_domain}/public/subida-og.jpg`,
-          width: 1200,
-          height: 630,
-          alt: siteConfig.site_name,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: siteConfig.site_name,
-      description: siteConfig.site_description,
-      images: [`${siteConfig.site_domain}/public/subida-og.jpg`],
-    },
+    title: siteConfig.site_name,
+    description: siteConfig.site_description,
+    type: "website",
+    url: siteConfig.site_domain,
+    images: [
+      {
+        url: `${siteConfig.site_domain}/subida-og.jpg`,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.site_name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.site_name,
+    description: siteConfig.site_description,
+    images: [`${siteConfig.site_domain}/subida-og.jpg`],
+  },
 };
 
 export default function RootLayout({
