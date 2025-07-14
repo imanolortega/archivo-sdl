@@ -35,6 +35,10 @@ const config = {
           DEFAULT: "hsl(var(--subida-pink))",
           foreground: "hsl(var(--subida-pink-foreground))",
         },
+        "subida-violet": {
+          DEFAULT: "hsl(var(--subida-violet))",
+          foreground: "hsl(var(--subida-violet-foreground))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
