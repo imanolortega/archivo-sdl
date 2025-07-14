@@ -94,7 +94,7 @@ export default async function Page({
   }
 
   const iconColor = "text-accent-foreground/90 hover:text-accent-foreground"
-  const iconSize = 28;
+  const iconSize = 24;
 
   const socialIcons: Record<string, JSX.Element> = {
     facebook: <FacebookIcon className={iconColor} width={iconSize} height={iconSize} />,
@@ -125,7 +125,7 @@ export default async function Page({
             </Link>
           </div>
           {featuredMedia?.source_url && (
-            <div className="h-96 my-12 md:h-[500px] overflow-hidden flex items-center justify-center border rounded-lg bg-accent/25">
+            <div className="h-96 my-12 mb-8 md:h-[500px] overflow-hidden flex items-center justify-center border rounded-lg bg-accent/25">
               <Image
                 className="h-full w-full object-cover"
                 src={featuredMedia.source_url}
@@ -139,7 +139,7 @@ export default async function Page({
           )}
         </Prose>
 
-        <Container className="py-4 sm:py-8 px-0 sm:px-0 grid grid-cols-3 max-w-fit m-0 gap-4">
+        <Container className="py-4 sm:py-8 px-0 sm:px-0 grid grid-cols-3 max-w-fit m-0 mb-2 gap-4">
           {socialMediaToShare.map((social) => (
             <Link
               key={social.alt}
