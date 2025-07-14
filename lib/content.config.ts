@@ -24,6 +24,24 @@ const topPost = {
   canonical: "/pages/musa-el-nombre-del-miedo",
 }
 
+const socialMediaToShare = [
+  {
+    alt: 'Compartir en Facebook',
+    url: 'https://www.facebook.com/sharer/sharer.php?u=',
+    icon: 'facebook',
+  },
+  {
+    alt: 'Compartir en X',
+    url: 'https://twitter.com/intent/tweet?url=',
+    icon: 'x',
+  },
+  {
+    alt: 'Compartir en WhatsApp',
+    url: 'https://api.whatsapp.com/send?text=',
+    icon: 'whatsapp',
+  },
+]
+
 const gridMainContent = [
   {
     title: topPost.title,
@@ -45,4 +63,11 @@ const gridMainContent = [
   },
 ]
 
-export { homePage, authorsPage, postsPage, topPost, gridMainContent }
+export {
+  authorsPage,
+  gridMainContent,
+  homePage,
+  postsPage,
+  socialMediaToShare,
+  topPost,
+}

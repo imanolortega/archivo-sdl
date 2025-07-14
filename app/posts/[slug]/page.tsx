@@ -11,6 +11,11 @@ import Balancer from "react-wrap-balancer";
 
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site.config";
+import { socialMediaToShare } from "@/lib/content.config";
+
+import { FacebookIcon } from "@/components/icons/facebook";
+import { WhatsAppIcon } from "@/components/icons/whatsapp";
+import { XIcon } from "@/components/icons/x";
 import Placeholder from "@/public/subida-article-placeholder.webp";
 
 import { notFound } from "next/navigation";
@@ -85,8 +90,17 @@ export default async function Page({
   const category = await getCategoryById(post?.categories[0]);
 
   function removeInlineStyles(html: string): string {
-  return html.replace(/style="[^"]*"/g, '');
-}
+    return html.replace(/style="[^"]*"/g, "");
+  }
+
+  const iconColor = "text-accent-foreground/90 hover:text-accent-foreground"
+  const iconSize = 28;
+
+  const socialIcons: Record<string, JSX.Element> = {
+    facebook: <FacebookIcon className={iconColor} width={iconSize} height={iconSize} />,
+    x: <XIcon className={iconColor} width={iconSize} height={iconSize} />,
+    whatsapp: <WhatsAppIcon className={iconColor} width={iconSize} height={iconSize} />,
+  }
 
   return (
     <Section>
@@ -125,7 +139,27 @@ export default async function Page({
           )}
         </Prose>
 
-        <Article dangerouslySetInnerHTML={{ __html: removeInlineStyles(post.content.rendered) }} />
+        <Container className="py-4 sm:py-8 px-0 sm:px-0 grid grid-cols-3 max-w-fit m-0 gap-4">
+          {socialMediaToShare.map((social) => (
+            <Link
+              key={social.alt}
+              href={`${social.url}${encodeURIComponent(
+                `${siteConfig.site_domain}/posts/${post.slug}`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-sm"
+            >
+              {socialIcons[social.icon]}
+            </Link>
+          ))}
+        </Container>
+
+        <Article
+          dangerouslySetInnerHTML={{
+            __html: removeInlineStyles(post.content.rendered),
+          }}
+        />
       </Container>
     </Section>
   );
