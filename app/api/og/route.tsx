@@ -31,15 +31,20 @@ export async function GET(request: NextRequest) {
             backgroundSize: "100px 100px",
           }}
         >
-          <img
-            src={logoUrl}
-            alt="Logo Subida de Línea"
-            width={120}
-            height={120}
+          <div
             style={{
-              marginBottom: 40,
+              display: "flex",
+              fontSize: 24,
+              fontStyle: "normal",
+              color: "#f23558",
+              marginBottom: 30,
+              whiteSpace: "pre-wrap",
+              lineHeight: 1.2,
+              maxWidth: "800px",
             }}
-          />
+          >
+            Archivo SDL
+          </div>
           <div
             style={{
               display: "flex",
