@@ -23,8 +23,10 @@ const font = FontSans({
   variable: "--font-sans",
 });
 
+const siteTitle = `${siteConfig.site_name} | Subida de Línea`
+
 export const metadata: Metadata = {
-  title: `${siteConfig.site_name} | Subida de Línea`,
+  title: siteTitle,
   description:
     "Somos Subida de Línea, una revista digital de crónicas, ensayos, entrevistas, poesía, cuentos y relatos de ficción.",
   metadataBase: new URL(siteConfig.site_domain),
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
     canonical: siteConfig.site_domain,
   },
   openGraph: {
-    title: siteConfig.site_name,
+    title: siteTitle,
     description: siteConfig.site_description,
     type: "website",
     url: siteConfig.site_domain,
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.site_name,
+    title: siteTitle,
     description: siteConfig.site_description,
     images: [`${siteConfig.site_domain}/subida-og.jpg`],
   },
