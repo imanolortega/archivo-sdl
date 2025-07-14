@@ -20,7 +20,7 @@ const postsPage = {
 
 const topPost = {
   title: "Musa: el nombre del miedo",
-  description: "Crónicas en serie sobre Musa Azar",
+  description: "Crónicas en serie sobre Musa Azar por Ernesto Picco.",
   canonical: "/pages/musa-el-nombre-del-miedo",
 }
 
