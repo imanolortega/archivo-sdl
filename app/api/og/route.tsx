@@ -4,7 +4,7 @@ import { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
-const logoUrl = `${new URL(siteConfig.site_domain).origin}/logo-subida-de-linea.webp`;
+const logoUrl = `${siteConfig.site_domain}/logo-subida-de-linea.webp`;
 
 export async function GET(request: NextRequest) {
   try {
