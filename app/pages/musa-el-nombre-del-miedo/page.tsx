@@ -5,12 +5,38 @@ import { PostCard } from "@/components/posts/post-card";
 
 import type { Metadata } from "next";
 import { topPost } from "@/lib/content.config";
+import { siteConfig } from "@/lib/site.config";
+
+const siteTitle = `${topPost.title} | Subida de Línea`;
+const pageURL = `${siteConfig.site_domain}${topPost.canonical}`;
+const openGraphImage = `${siteConfig.site_domain}/musa-el-nombre-del-miedo.webp`
 
 export const metadata: Metadata = {
-  title: topPost.title,
+  title: siteTitle,
   description: topPost.description,
+  metadataBase: new URL(pageURL),
   alternates: {
     canonical: topPost.canonical,
+  },
+  openGraph: {
+    title: siteTitle,
+    description: topPost.description,
+    type: "website",
+    url: pageURL,
+    images: [
+      {
+        url: openGraphImage,
+        width: 1200,
+        height: 630,
+        alt: siteTitle,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: topPost.description,
+    images: [openGraphImage],
   },
 };
 
