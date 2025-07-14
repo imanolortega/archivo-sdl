@@ -3,12 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const maxDuration = 30;
 
-/**
- * WordPress webhook handler for content revalidation
- * Receives notifications from WordPress when content changes
- * and revalidates the entire site
- */
-
 export async function POST(request: NextRequest) {
   try {
     const requestBody = await request.json();
