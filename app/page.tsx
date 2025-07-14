@@ -1,12 +1,12 @@
+import { Button } from "@/components/ui/button";
+import { PostCard } from "@/components/posts/post-card";
 import { Section, Container, Prose } from "@/components/craft";
 import Balancer from "react-wrap-balancer";
 
 import Link from "next/link";
 
-import { gridMainContent, homePage } from "@/lib/content.config";
 import { getPostsPaginated } from "@/lib/wordpress";
-import { PostCard } from "@/components/posts/post-card";
-import { Button } from "@/components/ui/button";
+import { gridMainContent, homePage } from "@/lib/content.config";
 
 export const dynamic = "auto";
 export const revalidate = 600;
