@@ -1,7 +1,10 @@
+import { siteConfig } from "@/lib/site.config";
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 
 export const runtime = "edge";
+
+const logoUrl = `${new URL(siteConfig.site_domain).origin}/logo-subida-de-linea.webp`;
 
 export async function GET(request: NextRequest) {
   try {
@@ -28,6 +31,15 @@ export async function GET(request: NextRequest) {
             backgroundSize: "100px 100px",
           }}
         >
+          <img
+            src={logoUrl}
+            alt="Logo Subida de Línea"
+            width={120}
+            height={120}
+            style={{
+              marginBottom: 40,
+            }}
+          />
           <div
             style={{
               display: "flex",
