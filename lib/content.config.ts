@@ -67,7 +67,7 @@ const postsPage = {
 
 const featurePost = {
   title: "Musa: el nombre del miedo",
-  description: "Crónicas en serie sobre Musa Azar por Ernesto Picco.",
+  description: "Crónicas en serie sobre Musa Azar por Ernesto Picco y Marcelo Argañaraz.",
   canonical: "/pages/musa-el-nombre-del-miedo",
 }
 
