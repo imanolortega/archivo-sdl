@@ -10,6 +10,49 @@ const homePage = {
   canonical: "/",
 }
 
+const featureContent = [
+  {
+    title: "Capítulo 1: Mirar en silencio",
+    href: "/posts/capitulo-1-mirar-en-silencio",
+    image: "/feature-content/portada-musa-capitulo-1.webp",
+  },
+  {
+    title: "Capítulo 2: Aprender a cazar",
+    href: "/posts/musa-el-nombre-del-miedo-capitulo-2-aprender-a-cazar",
+    image: "/feature-content/portada-musa-capitulo-2.webp",
+  },
+  {
+    title: "Capítulo 3: Presas",
+    href: "/posts/musa-el-nombre-del-miedo-capitulo-3-presas",
+    image: "/feature-content/portada-musa-capitulo-3.webp",
+  },
+  {
+    title: "Capítulo 4: Peronistas",
+    href: "/posts/musa-el-nombre-del-miedo-capitulo-4-peronistas",
+    image: "/feature-content/portada-musa-capitulo-4.webp",
+  },
+  {
+    title: "Capítulo 5: El golpe",
+    href: "/posts/musa-el-nombre-del-miedo-capitulo-5-el-golpe",
+    image: "/feature-content/portada-musa-capitulo-5.webp",
+  },
+  {
+    title: "Capítulo 6: Banqueros, policías y cuatreros",
+    href: "/posts/musa-el-nombre-del-miedo-capitulo-6-baqueros-policias-y-cuatreros",
+    image: "/feature-content/portada-musa-capitulo-6.webp",
+  },
+  {
+    title: "Capítulo 7: Borrar las huellas",
+    href: "/posts/musa-el-nombre-del-miedo-capitulo-7-borrar-las-huellas",
+    image: "/feature-content/portada-musa-capitulo-7.webp",
+  },
+  {
+    title: "Capítulo 8: Todas las culpas",
+    href: "/posts/musa-el-nombre-del-miedo-capitulo-8-todas-las-culpas",
+    image: "/feature-content/portada-musa-capitulo-8.webp",
+  },
+];
+
 const authorsPage = {
   title: "Todos los autores",
   description: "Explora todos los autores de nuestros textos",
@@ -22,7 +65,7 @@ const postsPage = {
   canonical: "/posts",
 }
 
-const topPost = {
+const featurePost = {
   title: "Musa: el nombre del miedo",
   description: "Crónicas en serie sobre Musa Azar por Ernesto Picco.",
   canonical: "/pages/musa-el-nombre-del-miedo",
@@ -69,9 +112,10 @@ const gridMainContent = [
 
 export {
   authorsPage,
+  featureContent,
+  featurePost,
   gridMainContent,
   homePage,
   postsPage,
   socialMediaToShare,
-  topPost,
 }

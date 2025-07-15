@@ -4,23 +4,23 @@ import { Section, Container, Prose } from "@/components/craft";
 import { PostCard } from "@/components/posts/post-card";
 
 import type { Metadata } from "next";
-import { topPost } from "@/lib/content.config";
+import { featurePost } from "@/lib/content.config";
 import { siteConfig } from "@/lib/site.config";
 
-const siteTitle = `${topPost.title} | Subida de Línea`;
-const pageURL = `${siteConfig.site_domain}${topPost.canonical}`;
+const siteTitle = `${featurePost.title} | Subida de Línea`;
+const pageURL = `${siteConfig.site_domain}${featurePost.canonical}`;
 const openGraphImage = `${siteConfig.site_domain}/musa-el-nombre-del-miedo.webp`
 
 export const metadata: Metadata = {
   title: siteTitle,
-  description: topPost.description,
+  description: featurePost.description,
   metadataBase: new URL(pageURL),
   alternates: {
-    canonical: topPost.canonical,
+    canonical: featurePost.canonical,
   },
   openGraph: {
     title: siteTitle,
-    description: topPost.description,
+    description: featurePost.description,
     type: "website",
     url: pageURL,
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: siteTitle,
-    description: topPost.description,
+    description: featurePost.description,
     images: [openGraphImage],
   },
 };
@@ -52,7 +52,7 @@ export default async function Page() {
       <Container>
         <div className="space-y-8">
           <Prose>
-            <h1>{topPost.title}</h1>
+            <h1>{featurePost.title}</h1>
           </Prose>
 
           <div className="grid md:grid-cols-3 gap-4">
