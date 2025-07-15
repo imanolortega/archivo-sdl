@@ -23,7 +23,7 @@ const config = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       fontSize: {
-          base: "1.125rem", // 18px
+          base: "1.2rem", // 18px
       },
       colors: {
         border: "hsl(var(--border))",

@@ -109,14 +109,14 @@ const Nav = ({ className, children, id }: NavProps) => {
         <div className="flex items-center gap-2">
           <div className="mx-2 hidden md:flex">
             {Object.entries(mainMenu).map(([key, href]) => (
-              <Button key={href} asChild variant="ghost" size="sm">
+              <Button className="font-bold" key={href} asChild variant="ghost" size="sm">
                 <Link href={href}>
                   {key.charAt(0).toUpperCase() + key.slice(1)}
                 </Link>
               </Button>
             ))}
           </div>
-          <Button asChild className="bg-subida-pink-foreground hover:bg-subida-pink hidden sm:flex text-white font-semibold">
+          <Button asChild className="bg-subida-pink-foreground hover:bg-subida-pink hidden sm:flex text-white font-bold">
             <Link href="/pages/apoyar">Apoyar</Link>
           </Button>
           <MobileNav />
