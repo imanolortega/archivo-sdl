@@ -37,8 +37,8 @@
     --subida-pink: 349 100% 43%;
     --subida-pink-foreground: 349 88% 58%;
 
-    --subida-violet: 253 51% 70%;
-    --subida-violet-foreground: 253 50% 23%;
+    --subida-violet: 253 50% 23%;
+    --subida-violet-foreground: 253 51% 70%;
   }
 
   .dark {
@@ -73,8 +73,8 @@
     --subida-pink: 349 100% 43%;
     --subida-pink-foreground: 349 88% 58%;
 
-    --subida-violet: 253 51% 70%;
-    --subida-violet-foreground: 253 50% 23%;
+    --subida-violet: 253 50% 23%;
+    --subida-violet-foreground: 253 51% 70%;
   }
 }
 
