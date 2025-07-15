@@ -20,9 +20,11 @@ const FeatureContent = () => {
     <Section className="md:p-4 bg-accent/65 dark:bg-accent/20 md:pb-6 pb-6">
       <Container>
         <Prose className="pb-0 sm:pb-0 mt-3">
-          <h2 className="mb-4">
-            Musa: <Balancer>el nombre del miedo</Balancer>
-          </h2>
+          <Link className="!no-underline hover:!underline" href={featurePost.canonical}>
+            <h2 className="mb-4">
+              Musa: el nombre del miedo
+            </h2>
+          </Link>
           <p className="!m-0">{featurePost.description}</p>
         </Prose>
       </Container>

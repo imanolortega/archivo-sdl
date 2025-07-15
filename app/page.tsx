@@ -63,7 +63,7 @@ export default async function Home() {
           <Prose>
             <h2 className="mb-12">Textos</h2>
           </Prose>
-          <section className="space-y-6">
+          <div className="space-y-6">
             {posts.length > 0 ? (
               <div className="grid md:grid-cols-3 gap-4">
                 {posts.map((post) => (
@@ -83,7 +83,7 @@ export default async function Home() {
                 <Link href="/posts">Ver más textos</Link>
               </Button>
             </div>
-          </section>
+          </div>
         </Container>
       </Section>
     </main>
