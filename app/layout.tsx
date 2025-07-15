@@ -12,10 +12,12 @@ import { siteConfig } from "@/lib/site.config";
 import Logo from "@/public/logo-subida-de-linea.webp";
 
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleTagManager } from '@next/third-parties/google'
 import { Inter as FontSans } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+
 
 const font = FontSans({
   subsets: ["latin"],
@@ -74,6 +76,7 @@ export default function RootLayout({
           <Footer />
         </ThemeProvider>
         <Analytics />
+        <GoogleTagManager gtmId="G-WP9LGLMDF0" />
       </body>
     </html>
   );
