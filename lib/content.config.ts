@@ -1,4 +1,8 @@
-import { File, Pen, User } from "lucide-react"
+import {
+  BookOpenText,
+  File,
+  User,
+} from "lucide-react"
 
 const homePage = {
   title: "Archivo Subida de Línea",
@@ -44,22 +48,22 @@ const socialMediaToShare = [
 
 const gridMainContent = [
   {
-    title: topPost.title,
-    description: topPost.description,
-    href: topPost.canonical,
-    icon: File,
-  },
-  {
     title: "Textos",
     description: "Todos los textos de Subida de Línea",
     href: "/posts",
-    icon: Pen,
+    icon: File,
   },
   {
     title: "Autores",
     description: "Todos los autores de Subida de Línea",
     href: "/posts/authors",
     icon: User,
+  },
+  {
+    title: "Sobre nosotros",
+    description: "Qué es Subida de Línea",
+    href: "/pages/nosotros",
+    icon: BookOpenText,
   },
 ]
 
