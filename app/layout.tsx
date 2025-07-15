@@ -13,7 +13,7 @@ import Logo from "@/public/logo-subida-de-linea.webp";
 
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleTagManager } from '@next/third-parties/google'
-import { Inter as FontSans } from "next/font/google";
+import { Manrope as FontSans } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -85,7 +85,7 @@ export default function RootLayout({
 const Nav = ({ className, children, id }: NavProps) => {
   return (
     <nav
-      className={cn("sticky z-50 top-0 bg-background", "border-b", className)}
+      className={cn("sticky z-50 top-0 bg-accent/30", "border-b", "backdrop-blur-md", className)}
       id={id}
     >
       <div
