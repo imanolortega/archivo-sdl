@@ -46,10 +46,19 @@ export default async function Page({
     category?: string;
     page?: string;
     search?: string;
+    year?: string;
   }>;
 }) {
   const params = await searchParams;
-  const { author, tag, category, page: pageParam, search } = params;
+  const { author, tag, category, page: pageParam, search, year } = params;
+
+  let after: string | undefined;
+  let before: string | undefined;
+
+  if (year) {
+    after = `${year}-01-01T00:00:00`;
+    before = `${Number(year) + 1}-01-01T00:00:00`;
+  }
 
   // Handle pagination
   const page = pageParam ? parseInt(pageParam, 10) : 1;
@@ -57,7 +66,7 @@ export default async function Page({
 
   // Fetch data based on search parameters using efficient pagination
   const [postsResponse, authors, tags, categories] = await Promise.all([
-    getPostsPaginated(page, postsPerPage, { author, tag, category, search }),
+    getPostsPaginated(page, postsPerPage, { author, tag, category, search, after, before }),
     search ? searchAuthors(search) : getAllAuthors(),
     search ? searchTags(search) : getAllTags(),
     search ? searchCategories(search) : getAllCategories(),
@@ -74,6 +83,7 @@ export default async function Page({
     if (author) params.set("author", author);
     if (tag) params.set("tag", tag);
     if (search) params.set("search", search);
+    if (year) params.set("year", year);
     return `/posts${params.toString() ? `?${params.toString()}` : ""}`;
   };
 
@@ -99,6 +109,7 @@ export default async function Page({
               selectedAuthor={author}
               selectedTag={tag}
               selectedCategory={category}
+              selectedYear={year}
             />
           </div>
 

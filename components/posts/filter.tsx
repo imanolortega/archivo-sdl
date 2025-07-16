@@ -30,6 +30,7 @@ export interface FilterPostsProps {
   selectedAuthor?: string;
   selectedTag?: string;
   selectedCategory?: string;
+  selectedYear?: string;
 }
 
 export function FilterPosts({
@@ -37,6 +38,7 @@ export function FilterPosts({
   categories,
   selectedAuthor,
   selectedCategory,
+  selectedYear,
 }: FilterPostsProps) {
   const router = useRouter();
 
@@ -56,7 +58,7 @@ export function FilterPosts({
   const hasAuthors = authors.length > 0;
 
   return (
-    <div className="grid md:grid-cols-[1.25fr_1.25fr_0.5fr] gap-2 my-4 !z-10">
+    <div className="grid md:grid-cols-4 gap-2 my-4 !z-10">
       <Select
         value={selectedCategory || "all"}
         onValueChange={(value) => handleFilterChange("category", value)}
@@ -93,12 +95,32 @@ export function FilterPosts({
           <SelectItem value="all">Todos los autores</SelectItem>
           {authors.map((author) => (
             <>
-            {author.id === 20 && (
-              <SelectItem key={author.id} value={author.id.toString()}>
-              {author.name}
-            </SelectItem>
-            )}</>
+              {author.id === 20 && (
+                <SelectItem key={author.id} value={author.id.toString()}>
+                  {author.name}
+                </SelectItem>
+              )}
+            </>
           ))}
+        </SelectContent>
+      </Select>
+
+      <Select
+        value={selectedYear || "all"}
+        onValueChange={(value) => handleFilterChange("year", value)}
+      >
+        <SelectTrigger className="text-center">
+          <SelectValue placeholder="Todos los años" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">Todos los años</SelectItem>
+          {[2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016].map(
+            (year) => (
+              <SelectItem key={year} value={year.toString()}>
+                {year}
+              </SelectItem>
+            )
+          )}
         </SelectContent>
       </Select>
 

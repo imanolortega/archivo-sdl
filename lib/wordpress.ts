@@ -115,6 +115,8 @@ export async function getPostsPaginated(
     tag?: string;
     category?: string;
     search?: string;
+    after?: string;  // nuevo
+    before?: string; // nuevo
   }
 ): Promise<WordPressResponse<Post[]>> {
   const query: Record<string, any> = {
@@ -123,7 +125,6 @@ export async function getPostsPaginated(
     page,
   };
 
-  // Build cache tags based on filters
   const cacheTags = ["wordpress", "posts"];
 
   if (filterParams?.search) {
@@ -142,22 +143,26 @@ export async function getPostsPaginated(
     query.categories = filterParams.category;
     cacheTags.push(`posts-category-${filterParams.category}`);
   }
+  if (filterParams?.after) {
+    query.after = filterParams.after;
+  }
+  if (filterParams?.before) {
+    query.before = filterParams.before;
+  }
 
-  // Add page-specific cache tag for granular invalidation
   cacheTags.push(`posts-page-${page}`);
 
   const url = `${baseUrl}/wp-json/wp/v2/posts${
     query ? `?${querystring.stringify(query)}` : ""
   }`;
-  const userAgent = "Next.js WordPress Client";
 
   const response = await fetch(url, {
     headers: {
-      "User-Agent": userAgent,
+      "User-Agent": "Next.js WordPress Client",
     },
     next: {
       tags: cacheTags,
-      revalidate: 3600, // 1 hour cache
+      revalidate: 3600,
     },
   });
 
@@ -179,6 +184,7 @@ export async function getPostsPaginated(
     },
   };
 }
+
 
 export async function getAllPosts(filterParams?: {
   author?: string;
@@ -420,5 +426,31 @@ export async function getPostsByAuthorPaginated(
 
   return wordpressFetchWithPagination<Post[]>("/wp-json/wp/v2/posts", query);
 }
+
+export async function getPostsByDateRange({
+  after,
+  before,
+  page = 1,
+  perPage = 9,
+}: {
+  after?: string; // ISO format 8601: '2024-01-01T00:00:00'
+  before?: string; // ISO format 8601: '2024-12-31T23:59:59'
+  page?: number;
+  perPage?: number;
+}): Promise<WordPressResponse<Post[]>> {
+  const query: Record<string, any> = {
+    _embed: true,
+    orderby: "date",
+    order: "desc",
+    per_page: perPage,
+    page,
+  };
+
+  if (after) query.after = after;
+  if (before) query.before = before;
+
+  return wordpressFetchWithPagination<Post[]>("/wp-json/wp/v2/posts", query);
+}
+
 
 export { WordPressAPIError };
