@@ -8,7 +8,6 @@ import Placeholder from "@/public/subida-placeholder.jpg";
 
 import {
   getFeaturedMediaById,
-  getCategoryById,
 } from "@/lib/wordpress";
 
 export async function AsidePostCard({ post }: { post: Post }) {
@@ -20,9 +19,6 @@ export async function AsidePostCard({ post }: { post: Post }) {
     day: "numeric",
     year: "numeric",
   });
-  const category = post.categories?.[0]
-    ? await getCategoryById(post.categories[0])
-    : null;
 
   return (
     <Link

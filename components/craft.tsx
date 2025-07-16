@@ -160,6 +160,7 @@ const styles = {
       "[&_figure]:my-4",
       "[&_figure_img]:my-0",
       "[&_figure_figcaption]:text-sm [&_figure_figcaption]:mt-2 [&_figure_figcaption]:text-muted-foreground",
+      "[&_iframe]:max-w-prose [&_iframe]:my-8 [&_iframe]:rounded-lg [&_iframe]:w-full",
     ],
     misc: [
       "[&_blockquote]:border-l-4 [&_blockquote]:border-primary/20 [&_blockquote]:pl-4 [&_blockquote]:py-1 [&_blockquote]:my-4 [&_blockquote]:text-muted-foreground",
