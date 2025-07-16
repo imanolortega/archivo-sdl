@@ -90,6 +90,11 @@ export default async function Page({
     ? await getFeaturedMediaById(post.featured_media)
     : null;
   const category = await getCategoryById(post?.categories[0]);
+  const date = new Date(post.date).toLocaleDateString("es-AR", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
 
   function removeInlineStyles(html: string): string {
     return html.replace(/style="[^"]*"/g, "");
@@ -125,6 +130,7 @@ export default async function Page({
             </Balancer>
           </h1>
           <div className="flex justify-between items-center gap-4 text-sm mb-4">
+            <p className="!text-sm text-muted-foreground !m-0">Publicado el {date}</p>
             <Link
               href={`/posts/?category=${category.id}`}
               className={cn(
