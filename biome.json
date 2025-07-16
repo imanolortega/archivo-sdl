@@ -14,15 +14,15 @@
   },
   "files": {
     "includes": [
-      "src/**/*.js",
-      "src/**/*.jsx",
-      "src/**/*.ts",
-      "src/**/*.tsx",
-      "src/**/*.json",
-      "src/**/*.css",
-      "src/**/*.scss",
-      "src/**/*.html",
-      "src/**/*.md"
+      "app/**/*.js",
+      "app/**/*.jsx",
+      "app/**/*.ts",
+      "app/**/*.tsx",
+      "app/**/*.json",
+      "app/**/*.css",
+      "app/**/*.scss",
+      "app/**/*.html",
+      "app/**/*.md"
     ]
   },
   "javascript": {

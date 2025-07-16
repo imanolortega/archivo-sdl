@@ -1,15 +1,15 @@
-import { getPostsByCategory } from "@/lib/wordpress";
+import { getPostsByCategory } from '@/lib/wordpress';
 
-import { Section, Container, Prose } from "@/components/craft";
-import { PostCard } from "@/components/posts/post-card";
+import { Section, Container, Prose } from '@/components/craft';
+import { PostCard } from '@/components/posts/post-card';
 
-import type { Metadata } from "next";
-import { featurePost } from "@/lib/content.config";
-import { siteConfig } from "@/lib/site.config";
+import type { Metadata } from 'next';
+import { featurePost } from '@/lib/content.config';
+import { siteConfig } from '@/lib/site.config';
 
 const siteTitle = `${featurePost.title} | Subida de Línea`;
 const pageURL = `${siteConfig.site_domain}${featurePost.canonical}`;
-const openGraphImage = `${siteConfig.site_domain}/musa-el-nombre-del-miedo.webp`
+const openGraphImage = `${siteConfig.site_domain}/musa-el-nombre-del-miedo.webp`;
 
 export const metadata: Metadata = {
   title: siteTitle,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteTitle,
     description: featurePost.description,
-    type: "website",
+    type: 'website',
     url: pageURL,
     images: [
       {
@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
     title: siteTitle,
     description: featurePost.description,
     images: [openGraphImage],
   },
 };
 
-export const dynamic = "auto";
+export const dynamic = 'auto';
 export const revalidate = 600;
 
 export default async function Page() {

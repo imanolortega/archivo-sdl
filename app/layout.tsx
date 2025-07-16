@@ -1,36 +1,35 @@
-import "./globals.css";
+import './globals.css';
 
-import { Button } from "@/components/ui/button";
-import { MobileNav } from "@/components/nav/mobile-nav";
-import { Section, Container } from "@/components/craft";
-import { ThemeProvider } from "@/components/theme/theme-provider";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { Button } from '@/components/ui/button';
+import { MobileNav } from '@/components/nav/mobile-nav';
+import { Section, Container } from '@/components/craft';
+import { ThemeProvider } from '@/components/theme/theme-provider';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
 
-import { cn } from "@/lib/utils";
-import { mainMenu, bottomMenu } from "@/lib/menu.config";
-import { siteConfig } from "@/lib/site.config";
-import Logo from "@/public/logo-subida-de-linea.webp";
+import { cn } from '@/lib/utils';
+import { mainMenu, bottomMenu } from '@/lib/menu.config';
+import { siteConfig } from '@/lib/site.config';
+import Logo from '@/public/logo-subida-de-linea.webp';
 
-import { Analytics } from "@vercel/analytics/react";
-import { GoogleTagManager } from '@next/third-parties/google'
-import { Manrope as FontSans } from "next/font/google";
-import Image from "next/image";
-import Link from "next/link";
-import type { Metadata } from "next";
-import { ScrollToTopButton } from "@/components/scroll-top/scroll-top";
-
+import { Analytics } from '@vercel/analytics/react';
+import { GoogleTagManager } from '@next/third-parties/google';
+import { Manrope as FontSans } from 'next/font/google';
+import Image from 'next/image';
+import Link from 'next/link';
+import type { Metadata } from 'next';
+import { ScrollToTopButton } from '@/components/scroll-top/scroll-top';
 
 const font = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
+  subsets: ['latin'],
+  variable: '--font-sans',
 });
 
-const siteTitle = `${siteConfig.site_name} | Subida de Línea`
+const siteTitle = `${siteConfig.site_name} | Subida de Línea`;
 
 export const metadata: Metadata = {
   title: siteTitle,
   description:
-    "Somos Subida de Línea, una revista digital de crónicas, ensayos, entrevistas, poesía, cuentos y relatos de ficción.",
+    'Somos Subida de Línea, una revista digital de crónicas, ensayos, entrevistas, poesía, cuentos y relatos de ficción.',
   metadataBase: new URL(siteConfig.site_domain),
   alternates: {
     canonical: siteConfig.site_domain,
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteTitle,
     description: siteConfig.site_description,
-    type: "website",
+    type: 'website',
     url: siteConfig.site_domain,
     images: [
       {
@@ -50,7 +49,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
     title: siteTitle,
     description: siteConfig.site_description,
     images: [`${siteConfig.site_domain}/subida-og.jpg`],
@@ -65,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={cn("min-h-screen font-sans antialiased", font.variable)}>
+      <body className={cn('min-h-screen font-sans antialiased', font.variable)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -87,7 +86,12 @@ export default function RootLayout({
 const Nav = ({ className, children, id }: NavProps) => {
   return (
     <nav
-      className={cn("sticky z-50 top-0 bg-accent/30", "border-b", "backdrop-blur-md", className)}
+      className={cn(
+        'sticky z-50 top-0 bg-accent/30',
+        'border-b',
+        'backdrop-blur-md',
+        className,
+      )}
       id={id}
     >
       <div
@@ -111,14 +115,23 @@ const Nav = ({ className, children, id }: NavProps) => {
         <div className="flex items-center gap-2">
           <div className="mx-2 hidden md:flex">
             {Object.entries(mainMenu).map(([key, href]) => (
-              <Button className="font-bold" key={href} asChild variant="ghost" size="sm">
+              <Button
+                className="font-bold"
+                key={href}
+                asChild
+                variant="ghost"
+                size="sm"
+              >
                 <Link href={href}>
                   {key.charAt(0).toUpperCase() + key.slice(1)}
                 </Link>
               </Button>
             ))}
           </div>
-          <Button asChild className="bg-subida-pink-foreground hover:bg-subida-pink hidden sm:flex text-white font-bold">
+          <Button
+            asChild
+            className="bg-subida-pink-foreground hover:bg-subida-pink hidden sm:flex text-white font-bold"
+          >
             <Link href="/pages/apoyar">Apoyar</Link>
           </Button>
           <MobileNav />

@@ -1,14 +1,14 @@
-import { getAllPages } from "@/lib/wordpress";
-import { Section, Container, Prose } from "@/components/craft";
-import { Metadata } from "next";
-import BackButton from "@/components/back";
-import Link from "next/link";
+import { getAllPages } from '@/lib/wordpress';
+import { Section, Container, Prose } from '@/components/craft';
+import { Metadata } from 'next';
+import BackButton from '@/components/back';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Todas las páginas",
-  description: "Buscar a través de todas las páginas",
+  title: 'Todas las páginas',
+  description: 'Buscar a través de todas las páginas',
   alternates: {
-    canonical: "/posts/pages",
+    canonical: '/posts/pages',
   },
 };
 

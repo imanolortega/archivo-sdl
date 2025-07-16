@@ -4,26 +4,26 @@ import {
   getFeaturedMediaById,
   getPostBySlug,
   getPostsPaginated,
-} from "@/lib/wordpress";
+} from '@/lib/wordpress';
 
-import { AsidePostCard } from "@/components/posts/aside-post-card";
-import { badgeVariants } from "@/components/ui/badge";
-import { Section, Container, Article, Prose } from "@/components/craft";
-import Balancer from "react-wrap-balancer";
+import { AsidePostCard } from '@/components/posts/aside-post-card';
+import { badgeVariants } from '@/components/ui/badge';
+import { Section, Container, Article, Prose } from '@/components/craft';
+import Balancer from 'react-wrap-balancer';
 
-import { cn } from "@/lib/utils";
-import { siteConfig } from "@/lib/site.config";
-import { socialMediaToShare } from "@/lib/content.config";
+import { cn } from '@/lib/utils';
+import { siteConfig } from '@/lib/site.config';
+import { socialMediaToShare } from '@/lib/content.config';
 
-import { FacebookIcon } from "@/components/icons/facebook";
-import { WhatsAppIcon } from "@/components/icons/whatsapp";
-import { XIcon } from "@/components/icons/x";
-import Placeholder from "@/public/subida-article-placeholder.webp";
+import { FacebookIcon } from '@/components/icons/facebook';
+import { WhatsAppIcon } from '@/components/icons/whatsapp';
+import { XIcon } from '@/components/icons/x';
+import Placeholder from '@/public/subida-article-placeholder.webp';
 
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-import type { Metadata } from "next";
+import { notFound } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
+import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
   return await getAllPostSlugs();
@@ -39,7 +39,7 @@ export async function generateMetadata({
   try {
     post = await getPostBySlug(slug);
   } catch (error) {
-    console.error("Error al obtener el post:", error);
+    console.error('Error al obtener el post:', error);
     return notFound();
   }
 
@@ -48,10 +48,10 @@ export async function generateMetadata({
   }
 
   const ogUrl = new URL(`${siteConfig.site_domain}/api/og`);
-  ogUrl.searchParams.append("title", post.title.rendered);
+  ogUrl.searchParams.append('title', post.title.rendered);
   // Strip HTML tags for description
-  const description = post.excerpt.rendered.replace(/<[^>]*>/g, "").trim();
-  ogUrl.searchParams.append("description", description);
+  const description = post.excerpt.rendered.replace(/<[^>]*>/g, '').trim();
+  ogUrl.searchParams.append('description', description);
 
   return {
     title: `${post.title.rendered} | ${siteConfig.site_name}`,
@@ -59,7 +59,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${post.title.rendered} | ${siteConfig.site_name}`,
       description: description,
-      type: "article",
+      type: 'article',
       url: `${siteConfig.site_domain}/posts/${post.slug}`,
       images: [
         {
@@ -71,7 +71,7 @@ export async function generateMetadata({
       ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title: post.title.rendered,
       description: description,
       images: [ogUrl.toString()],
@@ -90,14 +90,14 @@ export default async function Page({
     ? await getFeaturedMediaById(post.featured_media)
     : null;
   const category = await getCategoryById(post?.categories[0]);
-  const date = new Date(post.date).toLocaleDateString("es-AR", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
+  const date = new Date(post.date).toLocaleDateString('es-AR', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
   });
 
   function removeInlineStyles(html: string): string {
-    return html.replace(/style="[^"]*"/g, "");
+    return html.replace(/style="[^"]*"/g, '');
   }
 
   const postsPerPage = 3;
@@ -106,7 +106,7 @@ export default async function Page({
   ]);
   const { data: posts } = postsResponse;
 
-  const iconColor = "text-accent-foreground/90 hover:text-accent-foreground";
+  const iconColor = 'text-accent-foreground/90 hover:text-accent-foreground';
   const iconSize = 24;
   const socialIcons: Record<string, JSX.Element> = {
     facebook: (
@@ -130,13 +130,15 @@ export default async function Page({
             </Balancer>
           </h1>
           <div className="flex justify-between items-center gap-4 text-sm mb-4">
-            <p className="!text-sm text-muted-foreground !m-0">Publicado el {date}</p>
+            <p className="!text-sm text-muted-foreground !m-0">
+              Publicado el {date}
+            </p>
             <Link
               href={`/posts/?category=${category.id}`}
               className={cn(
-                badgeVariants({ variant: "outline" }),
-                "!no-underline",
-                "px-4 py-2"
+                badgeVariants({ variant: 'outline' }),
+                '!no-underline',
+                'px-4 py-2',
               )}
             >
               {category.name}
@@ -162,7 +164,7 @@ export default async function Page({
             <Link
               key={social.alt}
               href={`${social.url}${encodeURIComponent(
-                `${siteConfig.site_domain}/posts/${post.slug}`
+                `${siteConfig.site_domain}/posts/${post.slug}`,
               )}`}
               target="_blank"
               rel="noopener noreferrer"

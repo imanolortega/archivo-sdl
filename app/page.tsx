@@ -1,15 +1,15 @@
-import { Button } from "@/components/ui/button";
-import { PostCard } from "@/components/posts/post-card";
-import { Section, Container, Prose } from "@/components/craft";
-import Balancer from "react-wrap-balancer";
+import { Button } from '@/components/ui/button';
+import { PostCard } from '@/components/posts/post-card';
+import { Section, Container, Prose } from '@/components/craft';
+import Balancer from 'react-wrap-balancer';
 
-import Link from "next/link";
+import Link from 'next/link';
 
-import { getPostsPaginated } from "@/lib/wordpress";
-import { gridMainContent, homePage } from "@/lib/content.config";
-import FeatureContent from "@/components/feature-content/feature-content";
+import { getPostsPaginated } from '@/lib/wordpress';
+import { gridMainContent, homePage } from '@/lib/content.config';
+import FeatureContent from '@/components/feature-content/feature-content';
 
-export const dynamic = "auto";
+export const dynamic = 'auto';
 export const revalidate = 600;
 
 export default async function Home() {

@@ -1,6 +1,6 @@
-import { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/wordpress";
-import { siteConfig } from "@/lib/site.config";
+import { MetadataRoute } from 'next';
+import { getAllPosts } from '@/lib/wordpress';
+import { siteConfig } from '@/lib/site.config';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();
@@ -9,25 +9,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${siteConfig.site_domain}`,
       lastModified: new Date(),
-      changeFrequency: "yearly",
+      changeFrequency: 'yearly',
       priority: 1,
     },
     {
       url: `${siteConfig.site_domain}/posts`,
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${siteConfig.site_domain}/pages`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${siteConfig.site_domain}/authors`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: 'monthly',
       priority: 0.5,
     },
   ];
@@ -35,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const postUrls: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${siteConfig.site_domain}/posts/${post.slug}`,
     lastModified: new Date(post.modified),
-    changeFrequency: "weekly",
+    changeFrequency: 'weekly',
     priority: 0.5,
   }));
 

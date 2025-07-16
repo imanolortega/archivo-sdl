@@ -6,7 +6,7 @@ import {
   searchAuthors,
   searchTags,
   searchCategories,
-} from "@/lib/wordpress";
+} from '@/lib/wordpress';
 
 import {
   Pagination,
@@ -15,16 +15,16 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination";
+} from '@/components/ui/pagination';
 
-import { Section, Container, Prose } from "@/components/craft";
-import { PostCard } from "@/components/posts/post-card";
-import { FilterPosts } from "@/components/posts/filter";
-import { SearchInput } from "@/components/posts/search-input";
+import { Section, Container, Prose } from '@/components/craft';
+import { PostCard } from '@/components/posts/post-card';
+import { FilterPosts } from '@/components/posts/filter';
+import { SearchInput } from '@/components/posts/search-input';
 
-import type { Metadata } from "next";
-import { postsPage } from "@/lib/content.config";
-import { siteConfig } from "@/lib/site.config";
+import type { Metadata } from 'next';
+import { postsPage } from '@/lib/content.config';
+import { siteConfig } from '@/lib/site.config';
 
 export const metadata: Metadata = {
   title: `${postsPage.title} | ${siteConfig.site_name}`,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const dynamic = "auto";
+export const dynamic = 'auto';
 export const revalidate = 600;
 
 export default async function Page({
@@ -66,7 +66,14 @@ export default async function Page({
 
   // Fetch data based on search parameters using efficient pagination
   const [postsResponse, authors, tags, categories] = await Promise.all([
-    getPostsPaginated(page, postsPerPage, { author, tag, category, search, after, before }),
+    getPostsPaginated(page, postsPerPage, {
+      author,
+      tag,
+      category,
+      search,
+      after,
+      before,
+    }),
     search ? searchAuthors(search) : getAllAuthors(),
     search ? searchTags(search) : getAllTags(),
     search ? searchCategories(search) : getAllCategories(),
@@ -78,13 +85,13 @@ export default async function Page({
   // Create pagination URL helper
   const createPaginationUrl = (newPage: number) => {
     const params = new URLSearchParams();
-    if (newPage > 1) params.set("page", newPage.toString());
-    if (category) params.set("category", category);
-    if (author) params.set("author", author);
-    if (tag) params.set("tag", tag);
-    if (search) params.set("search", search);
-    if (year) params.set("year", year);
-    return `/posts${params.toString() ? `?${params.toString()}` : ""}`;
+    if (newPage > 1) params.set('page', newPage.toString());
+    if (category) params.set('category', category);
+    if (author) params.set('author', author);
+    if (tag) params.set('tag', tag);
+    if (search) params.set('search', search);
+    if (year) params.set('year', year);
+    return `/posts${params.toString() ? `?${params.toString()}` : ''}`;
   };
 
   return (
@@ -94,8 +101,8 @@ export default async function Page({
           <Prose>
             <h1>{postsPage.title}</h1>
             <p className="text-muted-foreground">
-              {total} {total === 1 ? "texto encontrado" : "textos encontrados"}
-              {search && " que coinciden con tu búsqueda"}
+              {total} {total === 1 ? 'texto encontrado' : 'textos encontrados'}
+              {search && ' que coinciden con tu búsqueda'}
             </p>
           </Prose>
 

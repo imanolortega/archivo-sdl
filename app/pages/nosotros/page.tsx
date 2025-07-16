@@ -1,5 +1,5 @@
-import { Section, Container, Prose } from "@/components/craft";
-import Balancer from "react-wrap-balancer";
+import { Section, Container, Prose } from '@/components/craft';
+import Balancer from 'react-wrap-balancer';
 
 export default async function AboutUs() {
   return (
@@ -38,13 +38,12 @@ export default async function AboutUs() {
                 lugar para decir.
                 <br />
                 <br />
-                Los contextos locales, históricos,
-                socioeconómicos y políticos merecen la presencia de alguien
-                capaz de contar su historia, de dar un espacio para que ellas
-                mismas lo hagan y tener la posibilidad de entender sus
-                circunstancias. Su parte de la historia y el mundo. En Subida de
-                Línea, apostamos a la calidad periodística y de investigación; a
-                las personas y sus historias.
+                Los contextos locales, históricos, socioeconómicos y políticos
+                merecen la presencia de alguien capaz de contar su historia, de
+                dar un espacio para que ellas mismas lo hagan y tener la
+                posibilidad de entender sus circunstancias. Su parte de la
+                historia y el mundo. En Subida de Línea, apostamos a la calidad
+                periodística y de investigación; a las personas y sus historias.
               </p>
             </Prose>
           </div>
