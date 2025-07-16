@@ -3,8 +3,10 @@ import {
   getCategoryById,
   getFeaturedMediaById,
   getPostBySlug,
+  getPostsPaginated,
 } from "@/lib/wordpress";
 
+import { AsidePostCard } from "@/components/posts/aside-post-card";
 import { badgeVariants } from "@/components/ui/badge";
 import { Section, Container, Article, Prose } from "@/components/craft";
 import Balancer from "react-wrap-balancer";
@@ -93,14 +95,23 @@ export default async function Page({
     return html.replace(/style="[^"]*"/g, "");
   }
 
-  const iconColor = "text-accent-foreground/90 hover:text-accent-foreground"
-  const iconSize = 24;
+  const postsPerPage = 3;
+  const [postsResponse] = await Promise.all([
+    getPostsPaginated(1, postsPerPage),
+  ]);
+  const { data: posts } = postsResponse;
 
+  const iconColor = "text-accent-foreground/90 hover:text-accent-foreground";
+  const iconSize = 24;
   const socialIcons: Record<string, JSX.Element> = {
-    facebook: <FacebookIcon className={iconColor} width={iconSize} height={iconSize} />,
+    facebook: (
+      <FacebookIcon className={iconColor} width={iconSize} height={iconSize} />
+    ),
     x: <XIcon className={iconColor} width={iconSize} height={iconSize} />,
-    whatsapp: <WhatsAppIcon className={iconColor} width={iconSize} height={iconSize} />,
-  }
+    whatsapp: (
+      <WhatsAppIcon className={iconColor} width={iconSize} height={iconSize} />
+    ),
+  };
 
   return (
     <Section>
@@ -119,7 +130,7 @@ export default async function Page({
               className={cn(
                 badgeVariants({ variant: "outline" }),
                 "!no-underline",
-                "px-4 py-2",
+                "px-4 py-2"
               )}
             >
               {category.name}
@@ -156,11 +167,26 @@ export default async function Page({
           ))}
         </Container>
 
-        <Article
-          dangerouslySetInnerHTML={{
-            __html: removeInlineStyles(post.content.rendered),
-          }}
-        />
+        <div className="flex gap-12">
+          <div className="w-full lg:w-2/3">
+            <Article
+              dangerouslySetInnerHTML={{
+                __html: removeInlineStyles(post.content.rendered),
+              }}
+            />
+          </div>
+
+          <aside className="hidden lg:block w-1/3 sticky top-24 self-start h-fit px-4">
+            <div className="pb-8">
+              <h2 className="text-2xl font-bold">Últimos textos</h2>
+            </div>
+            <div className="space-y-4">
+              {posts.map((post) => (
+                <AsidePostCard key={post.id} post={post} />
+              ))}
+            </div>
+          </aside>
+        </div>
       </Container>
     </Section>
   );
