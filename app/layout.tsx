@@ -17,6 +17,7 @@ import { Manrope as FontSans } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ScrollToTopButton } from "@/components/scroll-top/scroll-top";
 
 
 const font = FontSans({
@@ -77,6 +78,7 @@ export default function RootLayout({
         </ThemeProvider>
         <Analytics />
         <GoogleTagManager gtmId="G-WP9LGLMDF0" />
+        <ScrollToTopButton />
       </body>
     </html>
   );

@@ -61,7 +61,7 @@ const authorsPage = {
 
 const postsPage = {
   title: "Todos los textos",
-  description: "Explora todos los texts de Subida de Línea",
+  description: "Explora todos los textos de Subida de Línea desde el 2016 hasta la actualidad.",
   canonical: "/posts",
 }
 

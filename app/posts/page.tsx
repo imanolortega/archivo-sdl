@@ -139,7 +139,6 @@ export default async function Page({
 
                   {Array.from({ length: totalPages }, (_, i) => i + 1)
                     .filter((pageNum) => {
-                      // Show current page, first page, last page, and 2 pages around current
                       return (
                         pageNum === 1 ||
                         pageNum === totalPages ||
