@@ -156,7 +156,7 @@ const Footer = () => {
               ></Image>
             </Link>
           </div>
-          <div className="flex flex-col gap-2 text-sm sm:text-right">
+          <div className="flex flex-col gap-4 text-sm sm:text-right py-4 md:py-0">
             <h5 className="font-medium text-base">Sitio web</h5>
             {Object.entries(bottomMenu).map(([key, href]) => (
               <Link
