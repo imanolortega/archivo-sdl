@@ -18,7 +18,7 @@ import Link from "next/link";
 const FeatureContent = () => {
   return (
     <Section className="md:p-4 bg-accent/65 dark:bg-accent/20 md:py-10 py-8">
-      <Container>
+      <Container className="p-4 sm:p-8 pb-1 sm:pb-4">
         <Prose className="pb-0 sm:pb-0 mt-3">
           <Link className="!no-underline hover:!underline" href={featurePost.canonical}>
             <h2 className="mb-4">
