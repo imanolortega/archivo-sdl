@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function SponsorPage() {
+export default async function Page() {
   return (
     <main>
       <Section className="pb-0 md:pb-0">

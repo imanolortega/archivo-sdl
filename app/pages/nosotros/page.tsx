@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function AboutUs() {
+export default async function Page() {
   return (
     <main>
       <Section className="pb-0 md:pb-0">
