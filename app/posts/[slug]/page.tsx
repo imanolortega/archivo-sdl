@@ -6,24 +6,20 @@ import {
   getPostsPaginated,
 } from '@/lib/wordpress';
 
-import { AsidePostCard } from '@/components/posts/aside-post-card';
-import { badgeVariants } from '@/components/ui/badge';
+import { AsidePostCard } from '@/components/article/aside-post-card';
 import { Section, Container, Article, Prose } from '@/components/craft';
-import Balancer from 'react-wrap-balancer';
 
-import { cn } from '@/lib/utils';
 import { siteConfig } from '@/lib/site.config';
 import { socialMediaToShare } from '@/lib/content.config';
 
 import { FacebookIcon } from '@/components/icons/facebook';
 import { WhatsAppIcon } from '@/components/icons/whatsapp';
 import { XIcon } from '@/components/icons/x';
-import Placeholder from '@/public/subida-article-placeholder.webp';
 
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import ArticleHeader from '@/components/article/article-header';
 
 export async function generateStaticParams() {
   return await getAllPostSlugs();
@@ -90,11 +86,6 @@ export default async function Page({
     ? await getFeaturedMediaById(post.featured_media)
     : null;
   const category = await getCategoryById(post?.categories[0]);
-  const date = new Date(post.date).toLocaleDateString('es-AR', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  });
 
   function removeInlineStyles(html: string): string {
     return html.replace(/style="[^"]*"/g, '');
@@ -121,43 +112,11 @@ export default async function Page({
   return (
     <Section>
       <Container>
-        <Prose>
-          <h1>
-            <Balancer>
-              <span
-                dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-              ></span>
-            </Balancer>
-          </h1>
-          <div className="flex justify-between items-center gap-4 text-sm mb-4">
-            <p className="!text-sm text-muted-foreground !m-0">
-              Publicado el {date}
-            </p>
-            <Link
-              href={`/posts/?category=${category.id}`}
-              className={cn(
-                badgeVariants({ variant: 'outline' }),
-                '!no-underline',
-                'px-4 py-2',
-              )}
-            >
-              {category.name}
-            </Link>
-          </div>
-          {featuredMedia?.source_url && (
-            <div className="h-96 my-12 mb-8 md:h-[500px] overflow-hidden flex items-center justify-center border rounded-lg bg-accent/25">
-              <Image
-                className="h-full w-full object-cover"
-                src={featuredMedia.source_url}
-                alt={post.title.rendered}
-                width={1200}
-                height={900}
-                placeholder="blur"
-                blurDataURL={Placeholder.src}
-              />
-            </div>
-          )}
-        </Prose>
+        <ArticleHeader
+          post={post}
+          category={category}
+          featuredMedia={featuredMedia}
+        />
 
         <Container className="py-4 sm:py-8 px-0 sm:px-0 grid grid-cols-3 max-w-fit m-0 mb-2 gap-4">
           {socialMediaToShare.map((social) => (
