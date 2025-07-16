@@ -65,6 +65,10 @@ export async function POST(request: NextRequest) {
       // Also revalidate the entire layout for safety
       revalidatePath('/', 'layout');
 
+      revalidatePath('/pages/nosotros');
+      revalidatePath('/pages/musa-el-nombre-del-miedo');
+      revalidatePath('/pages/apoyar');
+
       return NextResponse.json({
         revalidated: true,
         message: `Revalidated ${contentType}${
