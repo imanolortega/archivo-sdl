@@ -7,20 +7,18 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"; // Ensure this is the correct import path
-import { Button } from "@/components/ui/button"; // Add this import for the Button component
+} from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
 
-export interface Author {
+interface Author {
   id: number;
   name: string;
 }
-
-export interface Tag {
+interface Tag {
   id: number;
   name: string;
 }
-
-export interface Category {
+interface Category {
   id: number;
   name: string;
 }

@@ -6,7 +6,7 @@ import Balancer from "react-wrap-balancer";
 import Link from "next/link";
 
 import { getPostsPaginated } from "@/lib/wordpress";
-import { featureContent, featurePost, gridMainContent, homePage } from "@/lib/content.config";
+import { gridMainContent, homePage } from "@/lib/content.config";
 import FeatureContent from "@/components/feature-content/feature-content";
 
 export const dynamic = "auto";
@@ -37,7 +37,7 @@ export default async function Home() {
       </Section>
 
       <Section className="">
-        <Container className="grid md:grid-cols-3 gap-4 mt-6">
+        <Container className="grid md:grid-cols-3 gap-4">
           {gridMainContent.map((item) => (
             <Link
               key={item.title}
