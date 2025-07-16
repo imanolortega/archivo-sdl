@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 export const dynamic = 'auto';
 export const revalidate = 600;
 
-export default async function Page() {
+export default async function FeaturedPage() {
   const [postsResponse] = await Promise.all([getPostsByCategory(892)]);
   const posts = postsResponse;
 

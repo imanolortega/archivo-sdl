@@ -1,5 +1,16 @@
 import { Section, Container, Prose } from '@/components/craft';
+import { aboutUs } from '@/lib/content.config';
+import { siteConfig } from '@/lib/site.config';
+import { Metadata } from 'next';
 import Balancer from 'react-wrap-balancer';
+
+export const metadata: Metadata = {
+  title: `${aboutUs.title} | ${siteConfig.site_name}`,
+  description: aboutUs.description,
+  alternates: {
+    canonical: aboutUs.canonical,
+  },
+};
 
 export default async function AboutUs() {
   return (

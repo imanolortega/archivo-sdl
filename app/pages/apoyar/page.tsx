@@ -1,8 +1,20 @@
 import { Section, Container, Prose } from '@/components/craft';
-import { sponsoredBtn } from '@/lib/content.config';
 import Balancer from 'react-wrap-balancer';
 
-export default async function AboutUs() {
+import type { Metadata } from 'next';
+
+import { sponsoredBtn, sponsorPage } from '@/lib/content.config';
+import { siteConfig } from '@/lib/site.config';
+
+export const metadata: Metadata = {
+  title: `${sponsorPage.title} | ${siteConfig.site_name}`,
+  description: sponsorPage.description,
+  alternates: {
+    canonical: sponsorPage.canonical,
+  },
+};
+
+export default async function SponsorPage() {
   return (
     <main>
       <Section className="pb-0 md:pb-0">

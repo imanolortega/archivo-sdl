@@ -110,9 +110,22 @@ const gridMainContent = [
   },
 ]
 
+const aboutUs = {
+  title: "Nosotros",
+  description: "Subida de Línea es una revista digital de crónicas, ensayos, entrevistas, poesía, cuentos y relatos de ficción. Desde el año 2016 proponemos una forma de hacer periodismo centrada en las personas, sus historias y sus derechos.",
+  canonical: "/pages/nosotros",
+}
+
+const sponsorPage = {
+  title: "Bancar nuestro proyecto",
+  description: "Si te gusta lo que hacemos y tienes la posibilidad de hacerlo, puedes apoyarnos con una contribución y ser parte de este proyecto autogestionado.",
+  canonical: "/pages/apoyar",
+}
+
 const sponsoredBtn = `<div><a href="https://cafecito.app/subidadelineasde" rel="noopener noreferrer" target="_blank"><img srcset="https://cdn.cafecito.app/imgs/buttons/button_2.png 1x, https://cdn.cafecito.app/imgs/buttons/button_2_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_2_3.75x.png 3.75x" src="https://cdn.cafecito.app/imgs/buttons/button_2.png" alt="Invitame un café en cafecito.app"></a></div>`
 
 export {
+  aboutUs,
   authorsPage,
   featureContent,
   featurePost,
@@ -121,4 +134,5 @@ export {
   postsPage,
   socialMediaToShare,
   sponsoredBtn,
+  sponsorPage,
 }
