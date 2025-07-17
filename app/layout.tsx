@@ -12,7 +12,7 @@ import { siteConfig } from '@/lib/site.config';
 import Logo from '@/public/logo-subida-de-linea.webp';
 
 import { Analytics } from '@vercel/analytics/react';
-import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Manrope as FontSans } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -76,7 +76,7 @@ export default function RootLayout({
           <Footer />
         </ThemeProvider>
         <Analytics />
-        <GoogleTagManager gtmId="G-WP9LGLMDF0" />
+        <GoogleAnalytics gaId="G-WP9LGLMDF0" />
         <ScrollToTopButton />
       </body>
     </html>
