@@ -119,7 +119,7 @@ const aboutUs = {
 const sponsorPage = {
   title: "Bancar nuestro proyecto",
   description: "Si te gusta lo que hacemos y tienes la posibilidad de hacerlo, puedes apoyarnos con una contribución y ser parte de este proyecto autogestionado.",
-  canonical: "/pages/apoyar",
+  canonical: "/pages/bancar",
 }
 
 const sponsoredBtn = `<div><a href="https://cafecito.app/subidadelineasde" rel="noopener noreferrer" target="_blank"><img srcset="https://cdn.cafecito.app/imgs/buttons/button_2.png 1x, https://cdn.cafecito.app/imgs/buttons/button_2_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_2_3.75x.png 3.75x" src="https://cdn.cafecito.app/imgs/buttons/button_2.png" alt="Invitame un café en cafecito.app"></a></div>`

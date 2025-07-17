@@ -10,7 +10,7 @@ export const bottomMenu = {
   textos: "/posts",
   'musa': "/pages/musa-el-nombre-del-miedo",
   nosotros:"/pages/nosotros",
-  apoyar: "/pages/apoyar",
+  bancar: "/pages/bancar",
 };
 
 export const mainMenuMobile = {
@@ -18,7 +18,7 @@ export const mainMenuMobile = {
   textos: "/posts",
   'musa': "/pages/musa-el-nombre-del-miedo",
   nosotros:"/pages/nosotros",
-  apoyar: "/pages/apoyar",
+  bancar: "/pages/bancar",
 };
 
 export const contentMenu = {

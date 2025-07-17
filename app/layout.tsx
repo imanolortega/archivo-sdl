@@ -132,7 +132,7 @@ const Nav = ({ className, children, id }: NavProps) => {
             asChild
             className="bg-subida-pink-foreground hover:bg-subida-pink hidden sm:flex text-white font-bold"
           >
-            <Link href="/pages/apoyar">Apoyar</Link>
+            <Link href="/pages/bancar">Apoyar</Link>
           </Button>
           <MobileNav />
         </div>

@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
 
       revalidatePath('/pages/nosotros');
       revalidatePath('/pages/musa-el-nombre-del-miedo');
-      revalidatePath('/pages/apoyar');
+      revalidatePath('/pages/bancar');
 
       if (path) {
         revalidatePath(path);
