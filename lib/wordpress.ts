@@ -115,8 +115,9 @@ export async function getPostsPaginated(
     tag?: string;
     category?: string;
     search?: string;
-    after?: string;  // nuevo
-    before?: string; // nuevo
+    after?: string;
+    before?: string;
+    exclude?: number | number[];
   }
 ): Promise<WordPressResponse<Post[]>> {
   const query: Record<string, any> = {
@@ -148,6 +149,9 @@ export async function getPostsPaginated(
   }
   if (filterParams?.before) {
     query.before = filterParams.before;
+  }
+  if (filterParams?.exclude) {
+    query.exclude = filterParams.exclude;
   }
 
   cacheTags.push(`posts-page-${page}`);

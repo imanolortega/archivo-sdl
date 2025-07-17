@@ -1,16 +1,13 @@
 "use client";
 
-// React and Next Imports
 import * as React from "react";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 
-// Utility Imports
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Logo from "@/public/logo-subida-de-linea.webp";
 
-// Component Imports
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {

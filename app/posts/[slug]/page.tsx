@@ -93,7 +93,7 @@ export default async function Page({
 
   const postsPerPage = 3;
   const [postsResponse] = await Promise.all([
-    getPostsPaginated(1, postsPerPage),
+    getPostsPaginated(1, postsPerPage, { exclude: [post.id] }),
   ]);
   const { data: posts } = postsResponse;
 
