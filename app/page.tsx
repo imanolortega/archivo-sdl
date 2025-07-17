@@ -28,7 +28,10 @@ export default async function Home() {
           <div className="space-y-16">
             <Prose>
               <h1 className="mb-12">
-                Archivo <Balancer className="text-subida-pink-foreground dark:text-subida-violet-foreground">Subida de Línea</Balancer>
+                Archivo{' '}
+                <Balancer className="text-subida-pink-foreground dark:text-subida-violet-foreground">
+                  Subida de Línea
+                </Balancer>
               </h1>
               <p>{homePage.description}</p>
             </Prose>

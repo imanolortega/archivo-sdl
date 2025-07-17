@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { contentType, contentId } = requestBody;
+    const { contentType, contentId, path } = requestBody;
 
     if (!contentType) {
       return NextResponse.json(
@@ -68,6 +68,10 @@ export async function POST(request: NextRequest) {
       revalidatePath('/pages/nosotros');
       revalidatePath('/pages/musa-el-nombre-del-miedo');
       revalidatePath('/pages/apoyar');
+
+      if (path) {
+        revalidatePath(path);
+      }
 
       return NextResponse.json({
         revalidated: true,
