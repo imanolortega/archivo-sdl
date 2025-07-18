@@ -29,7 +29,7 @@ export default async function Home() {
             <Prose>
               <h1 className="mb-16 !text-4xl sm:!text-5xl">
                 Archivo{' '}
-                <Balancer className="text-subida-pink-foreground dark:text-subida-violet-foreground">
+                <Balancer className="bg-gradient-to-r from-subida-pink-foreground to-subida-violet-foreground bg-clip-text text-transparent font-bold">
                   Subida de Línea
                 </Balancer>
               </h1>
