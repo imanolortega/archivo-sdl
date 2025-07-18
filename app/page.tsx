@@ -27,7 +27,7 @@ export default async function Home() {
         <Container>
           <div className="space-y-16">
             <Prose>
-              <h1 className="mb-12">
+              <h1 className="mb-16 !text-4xl sm:!text-5xl">
                 Archivo{' '}
                 <Balancer className="text-subida-pink-foreground dark:text-subida-violet-foreground">
                   Subida de Línea
